@@ -13,6 +13,9 @@
 		CA10E2252CA8F42C0029568B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CA10E2242CA8F42C0029568B /* Base */; };
 		CA10E2272CA8F42E0029568B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA10E2262CA8F42E0029568B /* Assets.xcassets */; };
 		CA10E22A2CA8F42E0029568B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CA10E2292CA8F42E0029568B /* Base */; };
+		CAB4ED852CAA11970035E4F2 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB4ED842CAA11970035E4F2 /* ProjectTableViewCell.swift */; };
+		CAB4ED872CAA19DD0035E4F2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB4ED862CAA19DD0035E4F2 /* TableViewController.swift */; };
+		CAB4ED8A2CAA404F0035E4F2 /* FeedJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB4ED892CAA404F0035E4F2 /* FeedJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		CA10E2262CA8F42E0029568B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA10E2292CA8F42E0029568B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA10E22B2CA8F42E0029568B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAB4ED842CAA11970035E4F2 /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
+		CAB4ED862CAA19DD0035E4F2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		CAB4ED892CAA404F0035E4F2 /* FeedJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 		CA10E21C2CA8F42C0029568B /* SKILIKET Project Team 7 */ = {
 			isa = PBXGroup;
 			children = (
+				CAB4ED882CAA3EE70035E4F2 /* Models */,
 				CA10E21D2CA8F42C0029568B /* AppDelegate.swift */,
 				CA10E21F2CA8F42C0029568B /* SceneDelegate.swift */,
 				CA10E2212CA8F42C0029568B /* ViewController.swift */,
@@ -63,8 +70,18 @@
 				CA10E2262CA8F42E0029568B /* Assets.xcassets */,
 				CA10E2282CA8F42E0029568B /* LaunchScreen.storyboard */,
 				CA10E22B2CA8F42E0029568B /* Info.plist */,
+				CAB4ED842CAA11970035E4F2 /* ProjectTableViewCell.swift */,
+				CAB4ED862CAA19DD0035E4F2 /* TableViewController.swift */,
 			);
 			path = "SKILIKET Project Team 7";
+			sourceTree = "<group>";
+		};
+		CAB4ED882CAA3EE70035E4F2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CAB4ED892CAA404F0035E4F2 /* FeedJSON.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +158,9 @@
 				CA10E2222CA8F42C0029568B /* ViewController.swift in Sources */,
 				CA10E21E2CA8F42C0029568B /* AppDelegate.swift in Sources */,
 				CA10E2202CA8F42C0029568B /* SceneDelegate.swift in Sources */,
+				CAB4ED8A2CAA404F0035E4F2 /* FeedJSON.swift in Sources */,
+				CAB4ED872CAA19DD0035E4F2 /* TableViewController.swift in Sources */,
+				CAB4ED852CAA11970035E4F2 /* ProjectTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
