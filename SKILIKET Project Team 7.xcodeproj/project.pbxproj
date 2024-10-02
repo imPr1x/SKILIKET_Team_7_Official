@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3415FE0D2CAC802000B6F5CE /* LoginRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415FE0C2CAC802000B6F5CE /* LoginRegisterViewController.swift */; };
-		3415FE0F2CAC88DB00B6F5CE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415FE0E2CAC88DA00B6F5CE /* RegisterViewController.swift */; };
 		CA10E21E2CA8F42C0029568B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA10E21D2CA8F42C0029568B /* AppDelegate.swift */; };
 		CA10E2202CA8F42C0029568B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA10E21F2CA8F42C0029568B /* SceneDelegate.swift */; };
 		CA10E2222CA8F42C0029568B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA10E2212CA8F42C0029568B /* ViewController.swift */; };
@@ -22,8 +20,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3415FE0C2CAC802000B6F5CE /* LoginRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterViewController.swift; sourceTree = "<group>"; };
-		3415FE0E2CAC88DA00B6F5CE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CA10E21A2CA8F42C0029568B /* SKILIKET Project Team 7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SKILIKET Project Team 7.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA10E21D2CA8F42C0029568B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA10E21F2CA8F42C0029568B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,15 +45,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3415FE0B2CAC7F9900B6F5CE /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				3415FE0C2CAC802000B6F5CE /* LoginRegisterViewController.swift */,
-				3415FE0E2CAC88DA00B6F5CE /* RegisterViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
 		CA10E2112CA8F42C0029568B = {
 			isa = PBXGroup;
 			children = (
@@ -77,12 +64,8 @@
 		CA10E21C2CA8F42C0029568B /* SKILIKET Project Team 7 */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< Updated upstream
 				CAB4ED8D2CACAE1E0035E4F2 /* Controllers */,
 				CAB4ED8C2CAC79EF0035E4F2 /* Views */,
-=======
-				3415FE0B2CAC7F9900B6F5CE /* Controllers */,
->>>>>>> Stashed changes
 				CAB4ED882CAA3EE70035E4F2 /* Models */,
 				CA10E21D2CA8F42C0029568B /* AppDelegate.swift */,
 				CA10E21F2CA8F42C0029568B /* SceneDelegate.swift */,
@@ -194,8 +177,6 @@
 				CA10E2222CA8F42C0029568B /* ViewController.swift in Sources */,
 				CA10E21E2CA8F42C0029568B /* AppDelegate.swift in Sources */,
 				CA10E2202CA8F42C0029568B /* SceneDelegate.swift in Sources */,
-				3415FE0F2CAC88DB00B6F5CE /* RegisterViewController.swift in Sources */,
-				3415FE0D2CAC802000B6F5CE /* LoginRegisterViewController.swift in Sources */,
 				CAB4ED8A2CAA404F0035E4F2 /* FeedJSON.swift in Sources */,
 				CAB4ED872CAA19DD0035E4F2 /* TableViewController.swift in Sources */,
 				CAB4ED8F2CACAE8D0035E4F2 /* ProjectViewController.swift in Sources */,
