@@ -77,12 +77,9 @@
 		CA10E21C2CA8F42C0029568B /* SKILIKET Project Team 7 */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< Updated upstream
 				CAB4ED8D2CACAE1E0035E4F2 /* Controllers */,
 				CAB4ED8C2CAC79EF0035E4F2 /* Views */,
-=======
 				3415FE0B2CAC7F9900B6F5CE /* Controllers */,
->>>>>>> Stashed changes
 				CAB4ED882CAA3EE70035E4F2 /* Models */,
 				CA10E21D2CA8F42C0029568B /* AppDelegate.swift */,
 				CA10E21F2CA8F42C0029568B /* SceneDelegate.swift */,
