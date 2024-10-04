@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		3415FE0D2CAC802000B6F5CE /* LoginRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415FE0C2CAC802000B6F5CE /* LoginRegisterViewController.swift */; };
 		3415FE0F2CAC88DB00B6F5CE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415FE0E2CAC88DA00B6F5CE /* RegisterViewController.swift */; };
+		348893D52CAF37850068E5BF /* confirmEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348893D42CAF37850068E5BF /* confirmEmailViewController.swift */; };
+		348893D72CAF52A60068E5BF /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348893D62CAF52A60068E5BF /* loginViewController.swift */; };
+		348893E12CAF59650068E5BF /* ProjectPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348893E02CAF59650068E5BF /* ProjectPageViewController.swift */; };
+		348893E72CAF5A730068E5BF /* PageDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348893E62CAF5A730068E5BF /* PageDataViewController.swift */; };
+		348893E92CAF6F630068E5BF /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348893E82CAF6F630068E5BF /* ProjectViewController.swift */; };
 		CA10E21E2CA8F42C0029568B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA10E21D2CA8F42C0029568B /* AppDelegate.swift */; };
 		CA10E2202CA8F42C0029568B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA10E21F2CA8F42C0029568B /* SceneDelegate.swift */; };
 		CA10E2222CA8F42C0029568B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA10E2212CA8F42C0029568B /* ViewController.swift */; };
@@ -18,12 +23,16 @@
 		CAB4ED852CAA11970035E4F2 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB4ED842CAA11970035E4F2 /* ProjectTableViewCell.swift */; };
 		CAB4ED872CAA19DD0035E4F2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB4ED862CAA19DD0035E4F2 /* TableViewController.swift */; };
 		CAB4ED8A2CAA404F0035E4F2 /* FeedJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB4ED892CAA404F0035E4F2 /* FeedJSON.swift */; };
-		CAB4ED8F2CACAE8D0035E4F2 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB4ED8E2CACAE8D0035E4F2 /* ProjectViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3415FE0C2CAC802000B6F5CE /* LoginRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterViewController.swift; sourceTree = "<group>"; };
 		3415FE0E2CAC88DA00B6F5CE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		348893D42CAF37850068E5BF /* confirmEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = confirmEmailViewController.swift; sourceTree = "<group>"; };
+		348893D62CAF52A60068E5BF /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
+		348893E02CAF59650068E5BF /* ProjectPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectPageViewController.swift; sourceTree = "<group>"; };
+		348893E62CAF5A730068E5BF /* PageDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDataViewController.swift; sourceTree = "<group>"; };
+		348893E82CAF6F630068E5BF /* ProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
 		CA10E21A2CA8F42C0029568B /* SKILIKET Project Team 7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SKILIKET Project Team 7.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA10E21D2CA8F42C0029568B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA10E21F2CA8F42C0029568B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,7 +44,6 @@
 		CAB4ED842CAA11970035E4F2 /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
 		CAB4ED862CAA19DD0035E4F2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		CAB4ED892CAA404F0035E4F2 /* FeedJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedJSON.swift; sourceTree = "<group>"; };
-		CAB4ED8E2CACAE8D0035E4F2 /* ProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +60,15 @@
 		3415FE0B2CAC7F9900B6F5CE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CA10E2212CA8F42C0029568B /* ViewController.swift */,
+				CAB4ED862CAA19DD0035E4F2 /* TableViewController.swift */,
 				3415FE0C2CAC802000B6F5CE /* LoginRegisterViewController.swift */,
 				3415FE0E2CAC88DA00B6F5CE /* RegisterViewController.swift */,
+				348893D42CAF37850068E5BF /* confirmEmailViewController.swift */,
+				348893D62CAF52A60068E5BF /* loginViewController.swift */,
+				348893E02CAF59650068E5BF /* ProjectPageViewController.swift */,
+				348893E62CAF5A730068E5BF /* PageDataViewController.swift */,
+				348893E82CAF6F630068E5BF /* ProjectViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -77,7 +92,6 @@
 		CA10E21C2CA8F42C0029568B /* SKILIKET Project Team 7 */ = {
 			isa = PBXGroup;
 			children = (
-				CAB4ED8D2CACAE1E0035E4F2 /* Controllers */,
 				CAB4ED8C2CAC79EF0035E4F2 /* Views */,
 				3415FE0B2CAC7F9900B6F5CE /* Controllers */,
 				CAB4ED882CAA3EE70035E4F2 /* Models */,
@@ -105,16 +119,6 @@
 				CA10E2282CA8F42E0029568B /* LaunchScreen.storyboard */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		CAB4ED8D2CACAE1E0035E4F2 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				CA10E2212CA8F42C0029568B /* ViewController.swift */,
-				CAB4ED862CAA19DD0035E4F2 /* TableViewController.swift */,
-				CAB4ED8E2CACAE8D0035E4F2 /* ProjectViewController.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,13 +193,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA10E2222CA8F42C0029568B /* ViewController.swift in Sources */,
+				348893E72CAF5A730068E5BF /* PageDataViewController.swift in Sources */,
+				348893D72CAF52A60068E5BF /* loginViewController.swift in Sources */,
+				348893E92CAF6F630068E5BF /* ProjectViewController.swift in Sources */,
+				348893E12CAF59650068E5BF /* ProjectPageViewController.swift in Sources */,
 				CA10E21E2CA8F42C0029568B /* AppDelegate.swift in Sources */,
+				348893D52CAF37850068E5BF /* confirmEmailViewController.swift in Sources */,
 				CA10E2202CA8F42C0029568B /* SceneDelegate.swift in Sources */,
 				3415FE0F2CAC88DB00B6F5CE /* RegisterViewController.swift in Sources */,
 				3415FE0D2CAC802000B6F5CE /* LoginRegisterViewController.swift in Sources */,
 				CAB4ED8A2CAA404F0035E4F2 /* FeedJSON.swift in Sources */,
 				CAB4ED872CAA19DD0035E4F2 /* TableViewController.swift in Sources */,
-				CAB4ED8F2CACAE8D0035E4F2 /* ProjectViewController.swift in Sources */,
 				CAB4ED852CAA11970035E4F2 /* ProjectTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
