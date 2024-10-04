@@ -1,21 +1,19 @@
 //
-//  LoginRegisterViewController.swift
+//  confirmEmailViewController.swift
 //  SKILIKET Project Team 7
 //
-//  Created by Ramir Alcocer on 01/10/24.
+//  Created by Ramir Alcocer on 03/10/24.
 //
 
 import UIKit
 
-class LoginRegisterViewController: UIViewController {
+class confirmEmailViewController: UIViewController {
 
-    @IBOutlet weak var registerButton: UIButton!
-    @IBOutlet weak var loginButton: UIButton!
-    
+    var email: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
 
