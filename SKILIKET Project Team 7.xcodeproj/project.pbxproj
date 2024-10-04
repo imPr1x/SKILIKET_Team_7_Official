@@ -14,6 +14,8 @@
 		348893E12CAF59650068E5BF /* ProjectPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348893E02CAF59650068E5BF /* ProjectPageViewController.swift */; };
 		348893E72CAF5A730068E5BF /* PageDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348893E62CAF5A730068E5BF /* PageDataViewController.swift */; };
 		348893E92CAF6F630068E5BF /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348893E82CAF6F630068E5BF /* ProjectViewController.swift */; };
+		348893EB2CAFC8140068E5BF /* successViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348893EA2CAFC8140068E5BF /* successViewController.swift */; };
+		348893ED2CAFD1F20068E5BF /* registerAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348893EC2CAFD1F20068E5BF /* registerAdminViewController.swift */; };
 		CA10E21E2CA8F42C0029568B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA10E21D2CA8F42C0029568B /* AppDelegate.swift */; };
 		CA10E2202CA8F42C0029568B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA10E21F2CA8F42C0029568B /* SceneDelegate.swift */; };
 		CA10E2222CA8F42C0029568B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA10E2212CA8F42C0029568B /* ViewController.swift */; };
@@ -33,6 +35,8 @@
 		348893E02CAF59650068E5BF /* ProjectPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectPageViewController.swift; sourceTree = "<group>"; };
 		348893E62CAF5A730068E5BF /* PageDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDataViewController.swift; sourceTree = "<group>"; };
 		348893E82CAF6F630068E5BF /* ProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
+		348893EA2CAFC8140068E5BF /* successViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = successViewController.swift; sourceTree = "<group>"; };
+		348893EC2CAFD1F20068E5BF /* registerAdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerAdminViewController.swift; sourceTree = "<group>"; };
 		CA10E21A2CA8F42C0029568B /* SKILIKET Project Team 7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SKILIKET Project Team 7.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA10E21D2CA8F42C0029568B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA10E21F2CA8F42C0029568B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 				348893E02CAF59650068E5BF /* ProjectPageViewController.swift */,
 				348893E62CAF5A730068E5BF /* PageDataViewController.swift */,
 				348893E82CAF6F630068E5BF /* ProjectViewController.swift */,
+				348893EA2CAFC8140068E5BF /* successViewController.swift */,
+				348893EC2CAFD1F20068E5BF /* registerAdminViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -198,11 +204,13 @@
 				348893E92CAF6F630068E5BF /* ProjectViewController.swift in Sources */,
 				348893E12CAF59650068E5BF /* ProjectPageViewController.swift in Sources */,
 				CA10E21E2CA8F42C0029568B /* AppDelegate.swift in Sources */,
+				348893EB2CAFC8140068E5BF /* successViewController.swift in Sources */,
 				348893D52CAF37850068E5BF /* confirmEmailViewController.swift in Sources */,
 				CA10E2202CA8F42C0029568B /* SceneDelegate.swift in Sources */,
 				3415FE0F2CAC88DB00B6F5CE /* RegisterViewController.swift in Sources */,
 				3415FE0D2CAC802000B6F5CE /* LoginRegisterViewController.swift in Sources */,
 				CAB4ED8A2CAA404F0035E4F2 /* FeedJSON.swift in Sources */,
+				348893ED2CAFD1F20068E5BF /* registerAdminViewController.swift in Sources */,
 				CAB4ED872CAA19DD0035E4F2 /* TableViewController.swift in Sources */,
 				CAB4ED852CAA11970035E4F2 /* ProjectTableViewCell.swift in Sources */,
 			);
