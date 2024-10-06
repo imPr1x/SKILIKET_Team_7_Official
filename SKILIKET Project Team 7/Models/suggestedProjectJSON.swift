@@ -1,23 +1,23 @@
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
 //
-//   let worldFeed = try? JSONDecoder().decode(WorldFeed.self, from: jsonData)
-
-//  Created by Fernando Chiñas on 04/10/24.
+//  suggestedProjectJSON.swift
+//  SKILIKET Project Team 7
+//
+//  Created by Fernando Chiñas on 06/10/24.
+//
 
 import Foundation
 
-// MARK: - WorldFeed
-class WorldFeed: Codable {
-    let answer: [Answer]
+// MARK: - Suggested
+class Suggested: Codable {
+    let suggestedproject: [Suggestedproject]
 
-    init(answer: [Answer]) {
-        self.answer = answer
+    init(suggestedproject: [Suggestedproject]) {
+        self.suggestedproject = suggestedproject
     }
 }
 
-// MARK: - Answer
-class Answer: Codable {
+// MARK: - Suggestedproject
+class Suggestedproject: Codable {
     let title, description: String
     let imageName: String
     let date: String
@@ -42,18 +42,13 @@ class Answer: Codable {
     }
 }
 
+typealias initialProject = Suggestedproject
+typealias initialProjects = [Suggestedproject]
 
-typealias NewWorld = Answer
-typealias NewsWorld = [Answer]
 
-enum NewWorldError: Error, LocalizedError {
-    case notConnected
-    case wrongData
-}
-
-extension WorldFeed{
-    static func fetchNewsWorld() async throws -> NewsWorld {
-        var urlComponents = URLComponents(string: "http://martinmolina.com.mx/martinmolina.com.mx/reto_skiliket/Equipo7/newsWorldJSON.json")!
+extension Suggested {
+    static func fetchSuggested() async throws -> initialProjects {
+        var urlComponents = URLComponents(string: "http://martinmolina.com.mx/martinmolina.com.mx/reto_skiliket/Equipo7/suggestedProjectJSON.json")!
         
         let (data, response) = try await URLSession.shared.data(from: urlComponents.url!)
         let jsonDecoder = JSONDecoder()
@@ -67,8 +62,8 @@ extension WorldFeed{
         
         if let httpResponse = response as? HTTPURLResponse,
            httpResponse.statusCode == 200,
-           let newResponse = try? jsonDecoder.decode(WorldFeed.self, from: data) {
-            return newResponse.answer
+           let dataResponse = try? jsonDecoder.decode(Suggested.self, from: data) {
+            return dataResponse.suggestedproject
         }
         else {
             print("Hubo un error al recuperar la informacion")

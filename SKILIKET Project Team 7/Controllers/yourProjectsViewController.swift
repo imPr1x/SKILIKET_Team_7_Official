@@ -1,5 +1,5 @@
 //
-//  ProjectWorldViewController.swift
+//  yourProjectsViewController.swift
 //  SKILIKET Project Team 7
 //
 //  Created by Fernando Chiñas on 06/10/24.
@@ -7,26 +7,21 @@
 
 import UIKit
 
-class ProjectWorldViewController: UIViewController {
+class yourProjectsViewController: UIViewController {
 
-    var selectedworldproject: NewWorld?
     
+    var yourProjectSelected: yourproject?
+    
+    
+    
+    @IBOutlet weak var titleproject: UILabel!
     @IBOutlet weak var locationproject: UILabel!
-    
-    @IBOutlet weak var titleprojec: UILabel!
-    
     @IBOutlet weak var nameproject: UILabel!
-    
-    @IBOutlet weak var dateproject: UILabel!
-    
-    @IBOutlet weak var participantsproject: UILabel!
-    
     @IBOutlet weak var descriptionproject: UILabel!
-
+    @IBOutlet weak var dateproject: UILabel!
+    @IBOutlet weak var participantsproject: UILabel!
     @IBOutlet weak var imageuserproject: UIImageView!
-    
     @IBOutlet weak var imageproject: UIImageView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,20 +30,20 @@ class ProjectWorldViewController: UIViewController {
         imageuserproject.clipsToBounds = true
         
         // Asignar valores a los labels
-        locationproject.text = selectedworldproject?.location
-        dateproject.text = selectedworldproject?.date
-        participantsproject.text = "\(selectedworldproject?.participants ?? 0)"
-        titleprojec.text = selectedworldproject?.title
-        nameproject.text = selectedworldproject?.userName
-        descriptionproject.text = selectedworldproject?.description
+        locationproject.text = yourProjectSelected?.location
+        dateproject.text = yourProjectSelected?.date
+        participantsproject.text = "\(yourProjectSelected?.participants ?? 0)"
+        titleproject.text = yourProjectSelected?.title
+        nameproject.text = yourProjectSelected?.userName
+        descriptionproject.text = yourProjectSelected?.description
 
         // Cargar las imágenes desde URLs
-        if let projectImageURLString = selectedworldproject?.imageName,
+        if let projectImageURLString = yourProjectSelected?.imageName,
            let projectImageURL = URL(string: projectImageURLString) {
             loadImage(from: projectImageURL, into: imageproject)
         }
 
-        if let userImageURLString = selectedworldproject?.userImageName,
+        if let userImageURLString = yourProjectSelected?.userImageName,
            let userImageURL = URL(string: userImageURLString) {
             loadImage(from: userImageURL, into: imageuserproject)
         }

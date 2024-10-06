@@ -1,16 +1,16 @@
 //
-//  TableViewController.swift
+//  yourProjectsTableViewController.swift
 //  SKILIKET Project Team 7
 //
-//  Created by Fernando Chiñas on 29/09/24.
+//  Created by Fernando Chiñas on 06/10/24.
 //
 
 import UIKit
 
-class WorldNewsTableViewController: UITableViewController {
-    
+class yourProjectsTableViewController: UITableViewController {
+
     // Array de respuestas que contendrá los datos obtenidos desde el JSON remoto
-    var projects = NewsWorld()
+    var projects = yourprojects()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,15 +20,15 @@ class WorldNewsTableViewController: UITableViewController {
 
         // Cargar los datos desde la URL
         Task {
-            await fetchNewsData()
+            await fetchyourProjectsData()
         }
     }
 
     // MARK: - Función para cargar los datos de la URL
-    func fetchNewsData() async {
+    func fetchyourProjectsData() async {
         do {
-            let newsworld = try await WorldFeed.fetchNewsWorld()
-            self.projects = newsworld
+            let news = try await YourProject.fetchyourProjects()
+            self.projects = news
             DispatchQueue.main.async {
                 self.tableView.reloadData() // Recargar la tabla con los datos obtenidos
             }
@@ -95,9 +95,10 @@ class WorldNewsTableViewController: UITableViewController {
 
     // Preparación para el segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nextView = segue.destination as! ProjectWorldViewController
+        let nextView = segue.destination as! yourProjectsViewController
         let index = tableView.indexPathForSelectedRow?.row
         let h = projects[index!]
-        nextView.selectedworldproject = h
+        nextView.yourProjectSelected = h
     }
 }
+
