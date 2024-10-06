@@ -12,21 +12,76 @@ class UsersViewController: UIViewController {
     
     var loggedUser: data?  // Usuario que se recibe del login
     
-    
+    @IBOutlet weak var saveButton: UIButton!
     
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var mailLabel: UILabel!
-    @IBOutlet weak var fullnameLabel: UILabel!
-    @IBOutlet weak var ageLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
+
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var fullnameTextField: UITextField!
+    @IBOutlet weak var ageTextField: UITextField!
+    @IBOutlet weak var addressTextField: UITextField!
+    
+    
+    @IBAction func editEmailTapped(_ sender: UIButton) {
+        emailTextField.isEnabled = true
+        emailTextField.becomeFirstResponder()
+        saveButton.isHidden = false // Abrir el teclado
+    }
+    
+    @IBAction func editFullnameTapped(_ sender: UIButton) {
+        fullnameTextField.isEnabled = true
+        fullnameTextField.becomeFirstResponder()
+        saveButton.isHidden = false
+    }
+    
+    
+    @IBAction func editAgeTapped(_ sender: UIButton) {
+        ageTextField.isEnabled = true
+        ageTextField.becomeFirstResponder()
+        saveButton.isHidden = false
+    }
+    
+    @IBAction func editAddressTapped(_ sender: UIButton) {        addressTextField.isEnabled = true
+        addressTextField.becomeFirstResponder()
+        saveButton.isHidden = false
+    }
+    
+    @IBAction func saveButtonTapped(_ sender: UIButton) {
+        saveChanges()
+        dismissEditing()
+    }
+    
+    func saveChanges() {
+        // Aquí implementarías cómo se guardan los cambios en los campos de texto
+        print("Cambios guardados")
+    }
+
+    func dismissEditing() {
+        view.endEditing(true)  // Esto ocultará el teclado
+        saveButton.isHidden = true  // Oculta el botón de guardar después de guardar
+        disableTextFields()  // Opcionalmente, deshabilita los campos de texto
+    }
+
+    func disableTextFields() {
+        // Deshabilitar los campos de texto y volverlos a su estilo de solo lectura
+        emailTextField.isEnabled = false
+        fullnameTextField.isEnabled = false
+        ageTextField.isEnabled = false
+        addressTextField.isEnabled = false
+    }
+    
+    
+    
     
     override func viewDidLoad() {
-          super.viewDidLoad()
+        super.viewDidLoad()
+        saveButton.isHidden = true
 
           // Ocultar los elementos de la interfaz inicialmente
           profileImageView.isHidden = true
           usernameLabel.isHidden = true
+            /*
           mailLabel.isHidden = true
           fullnameLabel.isHidden = true
           ageLabel.isHidden = true
@@ -54,8 +109,12 @@ class UsersViewController: UIViewController {
                   self.ageLabel.isHidden = false
                   self.addressLabel.isHidden = false
               }
+              */
           }
       }
+    
+
+
 
       // Función para descargar y mostrar imágenes desde una URL
       func loadImage(from url: URL, into imageView: UIImageView) {
@@ -69,4 +128,4 @@ class UsersViewController: UIViewController {
           }
           task.resume()
       }
-  }
+  
