@@ -9,11 +9,86 @@ import UIKit
 
 class ProjectWorldViewController: UIViewController {
 
+    var selectedworldproject: NewWorld?
+    
+    @IBOutlet weak var locationproject: UILabel!
+    
+    @IBOutlet weak var titleprojec: UILabel!
+    
+    @IBOutlet weak var nameproject: UILabel!
+    
+    @IBOutlet weak var dateproject: UILabel!
+    
+    @IBOutlet weak var participantsproject: UILabel!
+    
+    @IBOutlet weak var descriptionproject: UILabel!
+
+    @IBOutlet weak var imageuserproject: UIImageView!
+    
+    @IBOutlet weak var imageproject: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        imageuserproject.layer.cornerRadius = imageuserproject.frame.size.width / 2
+        imageuserproject.clipsToBounds = true
+        
+        // Asignar valores a los labels
+        locationproject.text = selectedworldproject?.location
+        dateproject.text = selectedworldproject?.date
+        participantsproject.text = "\(selectedworldproject?.participants ?? 0)"
+        titleprojec.text = selectedworldproject?.title
+        nameproject.text = selectedworldproject?.userName
+        descriptionproject.text = selectedworldproject?.description
+
+        // Cargar las imágenes desde URLs
+        if let projectImageURLString = selectedworldproject?.imageName,
+           let projectImageURL = URL(string: projectImageURLString) {
+            loadImage(from: projectImageURL, into: imageproject)
+        }
+
+        if let userImageURLString = selectedworldproject?.userImageName,
+           let userImageURL = URL(string: userImageURLString) {
+            loadImage(from: userImageURL, into: imageuserproject)
+        }
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        // Tamaño fijo para todas las imágenes de usuario
+            let size: CGFloat = 50.0
+            imageuserproject.layer.cornerRadius = size / 2
+            imageuserproject.clipsToBounds = true
+            
+            // Establecer el tamaño de la imagen de usuario si no está restringido en Auto Layout
+            imageuserproject.frame.size = CGSize(width: size, height: size)
+            
+    
+    }
+
+
+    // Función para descargar imágenes
+    func loadImage(from url: URL, into imageView: UIImageView) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                print("Error al descargar la imagen: \(error)")
+                return
+            }
+            guard let data = data, let image = UIImage(data: data) else {
+                print("Error al convertir los datos en imagen")
+                return
+            }
+            // Actualizar la imagen en el hilo principal
+            DispatchQueue.main.async {
+                imageView.image = image
+            }
+        }.resume()
+    }
+}
+
+
     
 
     /*
@@ -26,4 +101,3 @@ class ProjectWorldViewController: UIViewController {
     }
     */
 
-}
