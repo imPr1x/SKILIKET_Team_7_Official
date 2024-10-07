@@ -49,7 +49,7 @@ enum NewError: Error, LocalizedError {
 
 extension Feed {
     static func fetchNews() async throws -> News {
-        var urlComponents = URLComponents(string: "http://martinmolina.com.mx/martinmolina.com.mx/reto_skiliket/Equipo7/newsJSON.json")!
+        var urlComponents = URLComponents(string: "http://martinmolina.com.mx/martinmolina.com.mx/reto_skiliket/Equipo7/newLocalJSON.json")!
         
         let (data, response) = try await URLSession.shared.data(from: urlComponents.url!)
         let jsonDecoder = JSONDecoder()
