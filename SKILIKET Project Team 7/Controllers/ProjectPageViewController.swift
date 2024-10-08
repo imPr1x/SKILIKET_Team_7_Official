@@ -9,6 +9,8 @@ import UIKit
 
 class ProjectPageViewController: UIPageViewController, UIPageViewControllerDataSource {
     
+    var user: User?
+    
     var pages = [UIViewController]()  // Array para almacenar las páginas dinámicas
     var suggestedProjects: initialProjects = []  // Array para almacenar los proyectos del JSON
     

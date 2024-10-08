@@ -11,9 +11,13 @@ class TableViewController: UITableViewController {
     
     // Array de respuestas que contendrá los datos obtenidos desde el JSON remoto
     var projects = News()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        navigationItem.rightBarButtonItem = addButton
 
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 300 // Ajusta este valor estimado si es necesario
@@ -22,6 +26,11 @@ class TableViewController: UITableViewController {
         Task {
             await fetchNewsData()
         }
+    }
+    
+    @objc func addButtonTapped() {
+        // Código para cambiar de vista o realizar alguna acción
+        print("Botón añadido pulsado")
     }
 
     // MARK: - Función para cargar los datos de la URL
@@ -59,7 +68,6 @@ class TableViewController: UITableViewController {
         cell.projectDescription.text = project.description
         cell.projectDate.text = project.date
         cell.projectUser.text = project.userName
-        cell.projectParticipants.text = "\(project.participants) participants"
         
         // Cargar la imagen del proyecto desde una URL
         if let projectImageURL = URL(string: project.imageName) {

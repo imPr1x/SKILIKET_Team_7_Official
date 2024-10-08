@@ -51,7 +51,7 @@ class loginViewController: UIViewController {
             // Verifica las credenciales del usuario
             if let authenticatedUser = authenticateUser(email: email, password: password) {
                 // Si las credenciales son correctas, hace el segue
-                performSegue(withIdentifier: "showUserProfile", sender: authenticatedUser)
+                performSegue(withIdentifier: "showProjectPage", sender: authenticatedUser)
             } else {
                 showAlert(withTitle: "Login Failed", message: "Invalid email or password.")
             }
@@ -64,12 +64,12 @@ class loginViewController: UIViewController {
     
     
      // Prepara el segue para pasar los datos del usuario autenticado a la siguiente vista
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     if segue.identifier == "showUserProfile" {
-     let userViewController = segue.destination as! UsersViewController
-     userViewController.loggedUser = sender as? User
-     }
-     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showProjectPage", let destinationVC = segue.destination as? ProjectPageViewController {
+            destinationVC.user = sender as? User // Asegúrate de que `ProjectPageViewController` tiene una propiedad `user`
+        }
+    }
+
      
      override func viewDidLoad() {
      super.viewDidLoad()
