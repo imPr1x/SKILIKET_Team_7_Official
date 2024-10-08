@@ -29,6 +29,7 @@
 		CA3472192CB35B9100E1F430 /* yourProjectJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3472182CB35B9100E1F430 /* yourProjectJSON.swift */; };
 		CA34721B2CB35E3500E1F430 /* yourProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA34721A2CB35E3500E1F430 /* yourProjectsViewController.swift */; };
 		CA34721F2CB3669B00E1F430 /* suggestedProjectJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA34721E2CB3669B00E1F430 /* suggestedProjectJSON.swift */; };
+		CA9E56242CB5ED39001C8AC2 /* LocalNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9E56232CB5ED39001C8AC2 /* LocalNewsViewController.swift */; };
 		CAB4ED852CAA11970035E4F2 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB4ED842CAA11970035E4F2 /* ProjectTableViewCell.swift */; };
 		CAB4ED872CAA19DD0035E4F2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB4ED862CAA19DD0035E4F2 /* TableViewController.swift */; };
 		CAB4ED8A2CAA404F0035E4F2 /* FeedJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB4ED892CAA404F0035E4F2 /* FeedJSON.swift */; };
@@ -61,6 +62,7 @@
 		CA3472182CB35B9100E1F430 /* yourProjectJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yourProjectJSON.swift; sourceTree = "<group>"; };
 		CA34721A2CB35E3500E1F430 /* yourProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yourProjectsViewController.swift; sourceTree = "<group>"; };
 		CA34721E2CB3669B00E1F430 /* suggestedProjectJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = suggestedProjectJSON.swift; sourceTree = "<group>"; };
+		CA9E56232CB5ED39001C8AC2 /* LocalNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNewsViewController.swift; sourceTree = "<group>"; };
 		CAB4ED842CAA11970035E4F2 /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
 		CAB4ED862CAA19DD0035E4F2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		CAB4ED892CAA404F0035E4F2 /* FeedJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedJSON.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				CA3472142CB2AE9E00E1F430 /* ProjectWorldViewController.swift */,
 				CA3472162CB359C400E1F430 /* yourProjectsTableViewController.swift */,
 				CA34721A2CB35E3500E1F430 /* yourProjectsViewController.swift */,
+				CA9E56232CB5ED39001C8AC2 /* LocalNewsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				CAB4ED872CAA19DD0035E4F2 /* TableViewController.swift in Sources */,
 				CA3472152CB2AE9E00E1F430 /* ProjectWorldViewController.swift in Sources */,
 				CAB4ED852CAA11970035E4F2 /* ProjectTableViewCell.swift in Sources */,
+				CA9E56242CB5ED39001C8AC2 /* LocalNewsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

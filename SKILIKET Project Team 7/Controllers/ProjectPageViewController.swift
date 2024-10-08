@@ -84,18 +84,13 @@ class ProjectPageViewController: UIPageViewController, UIPageViewControllerDataS
         vc.descriptionText = description
 
         // Verifica que la URL no sea nula antes de intentar cargar la imagen
-        print("Cargando página con título: \(title)")
-        print("Intentando cargar imagen desde: \(imageURL)")
         if let url = URL(string: imageURL) {
-            Task {
-                await vc.loadImage(from: url)
-            }
-        } else {
-            print("Error: URL inválida")
+            vc.imageURL = url  // Asigna la URL de la imagen
         }
 
         return vc
     }
+
 
 
 }
