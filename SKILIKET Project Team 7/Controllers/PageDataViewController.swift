@@ -9,6 +9,7 @@ import UIKit
 
 class PageDataViewController: UIViewController {
     
+    @IBOutlet weak var selectButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -26,9 +27,15 @@ class PageDataViewController: UIViewController {
         
          */
         
+        // Configura propiedades del botón
+        selectButton.layer.cornerRadius = 10
+        selectButton.setTitleColor(UIColor.white, for: .normal)
+        
+        
         print("Mostrando la vista con título: \(titleText ?? "Sin título")")
         print("Descripción: \(descriptionText ?? "Sin descripción")")
         print("imageView está conectado: \(imageView != nil)")
+        
         // Configurar los textos
         titleLabel.text = titleText
         descriptionLabel.text = descriptionText

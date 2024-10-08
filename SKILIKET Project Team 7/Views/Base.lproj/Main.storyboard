@@ -16,6 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.1960784314" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="sectionIndexBackgroundColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProjectCell" rowHeight="294" id="i1O-8l-x8r" customClass="ProjectTableViewCell" customModule="SKILIKET_Project_Team_7" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="294"/>
@@ -132,11 +134,13 @@
             </objects>
             <point key="canvasLocation" x="3430" y="1046"/>
         </scene>
-        <!--Item-->
+        <!--News-->
         <scene sceneID="kFH-OF-QGV">
             <objects>
                 <navigationController id="mKL-Jg-4CT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="news" selectedImage="news" id="LSZ-3e-ckU"/>
+                    <tabBarItem key="tabBarItem" title="News" image="news" selectedImage="news" id="LSZ-3e-ckU">
+                        <color key="badgeColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="Qdb-w8-baX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="e3a-EY-DVY">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
@@ -224,6 +228,7 @@
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1200" id="0ri-ie-kP6"/>
                                             <constraint firstAttribute="trailing" secondItem="iYl-yy-4Rz" secondAttribute="trailing" id="20y-ck-qgr"/>
@@ -290,7 +295,7 @@
             </objects>
             <point key="canvasLocation" x="3429.770992366412" y="1948.5915492957747"/>
         </scene>
-        <!--Users View Controller-->
+        <!--Profile-->
         <scene sceneID="E1c-Wq-YMk">
             <objects>
                 <viewController id="SPe-Pc-kSp" customClass="UsersViewController" customModule="SKILIKET_Project_Team_7" customModuleProvider="target" sceneMemberID="viewController">
@@ -425,7 +430,7 @@
                         <viewLayoutGuide key="safeArea" id="Qxg-nF-1aB"/>
                         <color key="backgroundColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
-                    <tabBarItem key="tabBarItem" image="user" selectedImage="userfilled" id="iYu-ga-Hbm">
+                    <tabBarItem key="tabBarItem" title="Profile" image="user" selectedImage="userfilled" id="iYu-ga-Hbm">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="ifG-w6-5Is"/>
@@ -887,7 +892,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X8o-dq-VwN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2519.8473282442746" y="-1339.4366197183099"/>
+            <point key="canvasLocation" x="2616" y="-1361"/>
         </scene>
         <!--Project Page View Controller-->
         <scene sceneID="sBf-J6-18Q">
@@ -897,7 +902,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yd3-ZP-Twm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3334" y="-1360"/>
+            <point key="canvasLocation" x="3334" y="-1361"/>
         </scene>
         <!--Page Data View Controller-->
         <scene sceneID="u7z-xi-jZR">
@@ -928,11 +933,12 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1z-rQ-ozZ">
                                 <rect key="frame" x="129" y="765" width="134" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.19215688110000001" green="0.32156863810000003" blue="0.2352941036" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.19215688110000001" green="0.32156863810000003" blue="0.2352941036" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Select">
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Select">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="H7r-x9-JoM" kind="presentation" modalPresentationStyle="fullScreen" id="urG-yi-8hZ"/>
                                 </connections>
@@ -947,20 +953,24 @@
                                         <fragment content="Skip"/>
                                     </attributedString>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="H7r-x9-JoM" kind="presentation" modalPresentationStyle="fullScreen" id="lyq-Wy-WA6"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xQW-gM-x4n"/>
-                        <color key="backgroundColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.19607843137254902" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <connections>
                         <outlet property="descriptionLabel" destination="Pmh-6V-JAi" id="5iM-h8-dpe"/>
                         <outlet property="imageView" destination="pJr-oC-frw" id="4i7-iV-x7R"/>
+                        <outlet property="selectButton" destination="R1z-rQ-ozZ" id="4Ye-Oz-Ruf"/>
                         <outlet property="titleLabel" destination="1hE-Wl-VjE" id="kkn-BN-EwP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9yo-WS-tpe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4109" y="-1361"/>
+            <point key="canvasLocation" x="4059" y="-1361"/>
         </scene>
         <!--Register Admin View Controller-->
         <scene sceneID="4nE-qg-tXf">
@@ -1139,22 +1149,22 @@
         <!--Tab Bar Controller-->
         <scene sceneID="lGi-uh-yEu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V5d-MX-qkI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="H7r-x9-JoM" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="aOK-Iq-ayU"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3ZK-Lh-h8c">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="SPe-Pc-kSp" kind="relationship" relationship="viewControllers" id="emn-6g-gUm"/>
                         <segue destination="mKL-Jg-4CT" kind="relationship" relationship="viewControllers" id="l5q-84-qYv"/>
+                        <segue destination="YbC-t7-e4u" kind="relationship" relationship="viewControllers" id="HKp-Xn-teC"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="V5d-MX-qkI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4108" y="-657"/>
+            <point key="canvasLocation" x="4059" y="-577"/>
         </scene>
         <!-- -->
         <scene sceneID="SgR-Jf-ZgB">
@@ -1294,7 +1304,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nRT-zJ-hJV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4640" y="1949"/>
+            <point key="canvasLocation" x="4324" y="1949"/>
         </scene>
         <!-- -->
         <scene sceneID="aqP-fn-cha">
@@ -1418,18 +1428,18 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Sa-15-W0q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4640" y="1046"/>
+            <point key="canvasLocation" x="4326" y="1046"/>
         </scene>
         <!-- -->
         <scene sceneID="b66-HS-GUj">
             <objects>
                 <viewController id="LqG-gF-MVy" customClass="yourProjectsViewController" customModule="SKILIKET_Project_Team_7" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="awG-TA-Y8O">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="1190"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iva-eZ-wxP">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="1190"/>
+                                <rect key="frame" x="0.0" y="78" width="393" height="1122"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NUR-uX-0ra" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="1200"/>
@@ -1559,7 +1569,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X0M-uz-2Td" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3431" y="3826"/>
+            <point key="canvasLocation" x="5184" y="1949"/>
         </scene>
         <!-- -->
         <scene sceneID="cna-Eu-7mj">
@@ -1569,6 +1579,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexBackgroundColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProjectCell" rowHeight="294" id="qM3-6d-ueh" customClass="ProjectTableViewCell" customModule="SKILIKET_Project_Team_7" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="294"/>
@@ -1683,13 +1695,33 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2aW-hE-h0r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3431" y="2923"/>
+            <point key="canvasLocation" x="5187" y="1046"/>
+        </scene>
+        <!--Projects-->
+        <scene sceneID="uQB-ci-xVV">
+            <objects>
+                <navigationController id="YbC-t7-e4u" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Projects" image="projects" selectedImage="projects" id="PFz-ql-HJQ">
+                        <color key="badgeColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9JA-Mm-ihV">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="FRd-95-Z5e" kind="relationship" relationship="rootViewController" id="V4J-cO-xus"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cUp-O6-d9H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5185" y="299"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="I8L-iw-p3y"/>
-        <segue reference="nGP-PR-YAN"/>
-        <segue reference="7c6-0b-uxa"/>
+        <segue reference="lyq-Wy-WA6"/>
+        <segue reference="u3i-4u-Xom"/>
+        <segue reference="U2g-a4-O7k"/>
+        <segue reference="RfC-BE-lQi"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="admin" width="512" height="512"/>
@@ -1700,6 +1732,7 @@
         <image name="logo" width="170.66667175292969" height="170.66667175292969"/>
         <image name="mailbox" width="512" height="512"/>
         <image name="news" width="16" height="16"/>
+        <image name="projects" width="16" height="16"/>
         <image name="track" width="315" height="12"/>
         <image name="user" width="16" height="16"/>
         <image name="userfilled" width="16" height="16"/>

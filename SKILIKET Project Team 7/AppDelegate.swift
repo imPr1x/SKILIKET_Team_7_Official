@@ -14,6 +14,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        // Define el color personalizado
+                let customColor = UIColor(red: 50/255.0, green: 51/255.0, blue: 51/255.0, alpha: 1.0) // #323333
+
+                // Configuración del UINavigationBar
+                UINavigationBar.appearance().backgroundColor = customColor
+                UINavigationBar.appearance().isTranslucent = false
+                UINavigationBar.appearance().barTintColor = customColor
+                UINavigationBar.appearance().tintColor = UIColor.white
+                UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
+
+                // Configuración del UITabBar
+                UITabBar.appearance().backgroundColor = customColor
+                UITabBar.appearance().isTranslucent = false
+                UITabBar.appearance().barTintColor = customColor
+                UITabBar.appearance().tintColor = UIColor.white // Color de los ítems seleccionados
+                UITabBar.appearance().unselectedItemTintColor = UIColor.gray // Color de los ítems no seleccionados
+
+
         return true
     }
 
