@@ -34,6 +34,19 @@ class loginViewController: UIViewController {
         return usersData.first { $0.mail == email && $0.password == password }
     }
     
+    // Funcion para la persistencia de datos, esta funcion convierte el objeto user en un formato JSON y lo guarda en UserDefaults
+    // Created by Fernando
+    func saveUserToUserDefaults(user: User) {
+        do {
+            let encoder = JSONEncoder()
+            let data = try encoder.encode(user)
+            UserDefaults.standard.set(data, forKey: "authenticatedUser")
+        } catch {
+            print("Error al guardar el usuario en UserDefaults: \(error)")
+        }
+    }
+
+    
     // Muestra una alerta
     func showAlert(withTitle title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -50,17 +63,55 @@ class loginViewController: UIViewController {
             
             // Verifica las credenciales del usuario
             if let authenticatedUser = authenticateUser(email: email, password: password) {
+                
+                // Guarda el usuario autenticado en UserDefaults para la persistencia
+                // Created by Fernando
+                saveUserToUserDefaults(user: authenticatedUser)
                 // Si las credenciales son correctas, hace el segue
                 performSegue(withIdentifier: "showProjectPage", sender: authenticatedUser)
             } else {
                 showAlert(withTitle: "Login Failed", message: "Invalid email or password.")
             }
+            
+            
         } catch {
             print("Error al obtener los datos: \(error.localizedDescription)")
             showAlert(withTitle: "Error", message: "Unable to fetch user data.")
         }
     }
     
+    
+    // Funcion para cuando se necesite recuperar los datos del usuario, es decir, se podrán leer desde UserDefaults y decodificarlos
+    func getAuthenticatedUser() -> User? {
+        guard let data = UserDefaults.standard.data(forKey: "authenticatedUser") else {
+            return nil
+        }
+        do {
+            let decoder = JSONDecoder()
+            let user = try decoder.decode(User.self, from: data)
+            return user
+        } catch {
+            print("Error al cargar el usuario desde UserDefaults: \(error)")
+            return nil
+        }
+    }
+
+    
+    
+    /*
+     // Created by Fernando
+     IMPLEMENTAR CUANDO QUIERA MANDARSE A LLAMAR EN OTRA VISTA
+     override func viewDidLoad() {
+         super.viewDidLoad()
+         
+         if let user = getAuthenticatedUser() {
+             print("Usuario autenticado: \(user.fullname)")
+             // Aquí puedes usar la información del usuario
+         } else {
+             print("No hay un usuario autenticado")
+         }
+     }
+     */
     
     
      // Prepara el segue para pasar los datos del usuario autenticado a la siguiente vista

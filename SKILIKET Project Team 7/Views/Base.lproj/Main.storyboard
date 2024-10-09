@@ -1725,7 +1725,6 @@
         <!--Profile-->
         <scene sceneID="xpZ-81-dBK">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e4U-wH-aMN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="9Mi-8n-4mG" customClass="LocalNewsViewController" customModule="SKILIKET_Project_Team_7" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kW9-fW-TRY">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -1858,6 +1857,7 @@
                         <outlet property="tableView" destination="IBq-PG-JVm" id="qep-m1-qx9"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e4U-wH-aMN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2086" y="1208"/>
         </scene>

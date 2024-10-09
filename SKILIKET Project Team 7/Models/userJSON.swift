@@ -5,6 +5,7 @@
 //  Created by Fernando Chiñas on 04/10/24.
 //
 
+
 import Foundation
 
 // MARK: - Users
@@ -22,8 +23,9 @@ class User: Codable {
     let age: Int
     let address: String
     let profileImageURL: String
+    let hierarchy: Hierarchy
 
-    init(username: String, mail: String, password: String, fullname: String, age: Int, address: String, profileImageURL: String) {
+    init(username: String, mail: String, password: String, fullname: String, age: Int, address: String, profileImageURL: String, hierarchy: Hierarchy) {
         self.username = username
         self.mail = mail
         self.password = password
@@ -31,9 +33,14 @@ class User: Codable {
         self.age = age
         self.address = address
         self.profileImageURL = profileImageURL
+        self.hierarchy = hierarchy
     }
 }
 
+enum Hierarchy: String, Codable {
+    case admin = "admin"
+    case user = "user"
+}
 
 typealias data = User
 typealias datas = [User]
