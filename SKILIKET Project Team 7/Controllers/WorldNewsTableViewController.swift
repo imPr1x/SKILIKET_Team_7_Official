@@ -11,7 +11,9 @@ class WorldNewsTableViewController: UITableViewController {
     
     // Array de respuestas que contendrá los datos obtenidos desde el JSON remoto
     var projects = NewsWorld()
-
+    
+    @IBOutlet weak var userIcon: UIImageView!
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 

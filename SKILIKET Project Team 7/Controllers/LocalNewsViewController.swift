@@ -9,22 +9,25 @@ import UIKit
 
 class LocalNewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var userIcon: UIImageView!
     
-    
-    // Array de respuestas que contendrá los datos obtenidos desde el JSON remoto
+        // Array de respuestas que contendrá los datos obtenidos desde el JSON remoto
         var projects = News()
 
         override func viewDidLoad() {
             super.viewDidLoad()
-
+            // Asegura que la imagen se ajuste al marco de la UIImageView
+            userIcon.contentMode = .scaleAspectFill
+            
+            // Hace que la imagen sea redonda
+            userIcon.layer.cornerRadius = userIcon.frame.width / 2
+            userIcon.clipsToBounds = true
+            
+    
             // Asignar delegado y fuente de datos
             tableView.delegate = self
             tableView.dataSource = self
-
-            let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
-            navigationItem.rightBarButtonItem = addButton
 
             tableView.rowHeight = UITableView.automaticDimension
             tableView.estimatedRowHeight = 300 // Ajusta este valor estimado si es necesario
@@ -33,11 +36,6 @@ class LocalNewsViewController: UIViewController, UITableViewDelegate, UITableVie
             Task {
                 await fetchNewsData()
             }
-        }
-
-        @objc func addButtonTapped() {
-            // Código para cambiar de vista o realizar alguna acción
-            print("Botón añadido pulsado")
         }
 
         // MARK: - Función para cargar los datos de la URL
@@ -108,10 +106,32 @@ class LocalNewsViewController: UIViewController, UITableViewDelegate, UITableVie
         }
 
         // Preparación para el segue
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            let nextView = segue.destination as! ProjectViewController
-            let index = tableView.indexPathForSelectedRow?.row
-            let h = projects[index!]
-            nextView.selectedproject = h
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showNewsDetail" {
+            // Este segue es para mostrar los detalles de una noticia específica
+            if let nextView = segue.destination as? ProjectViewController,
+               let index = tableView.indexPathForSelectedRow?.row {
+                let h = projects[index]
+                nextView.selectedproject = h
+            }
+        } else if segue.identifier == "showGlobalNews" {
+            // Este segue es para el botón que cambia a otra pantalla
+            // Configura el destino según sea necesario, por ejemplo:
+            let otherViewController = segue.destination as? WorldNewsTableViewController
+            // Configura `otherViewController` con la información necesaria
         }
+    }
+
+    
+        //Ocultar la navbar en la pantalla principal de news
+        override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            navigationController?.setNavigationBarHidden(true, animated: animated)
+        }
+
+        override func viewWillDisappear(_ animated: Bool) {
+            super.viewWillDisappear(animated)
+            navigationController?.setNavigationBarHidden(false, animated: animated)
+        }
+    
     }

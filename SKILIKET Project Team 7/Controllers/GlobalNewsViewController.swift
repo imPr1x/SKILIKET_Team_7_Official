@@ -1,43 +1,41 @@
 //
-//  TableViewController.swift
+//  GlobalNewsViewController.swift
 //  SKILIKET Project Team 7
 //
-//  Created by Fernando Chiñas on 29/09/24.
+//  Created by Ramir Alcocer on 09/10/24.
 //
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class GlobalNewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    @IBOutlet weak var userIcon: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
     
-    // Array de respuestas que contendrá los datos obtenidos desde el JSON remoto
-    var projects = News()
-    
+    var projects = NewsWorld()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
-        navigationItem.rightBarButtonItem = addButton
 
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 300 // Ajusta este valor estimado si es necesario
+        
+        
+        // Asignar delegado y fuente de datos
+        tableView.delegate = self
+        tableView.dataSource = self
 
         // Cargar los datos desde la URL
         Task {
             await fetchNewsData()
         }
     }
-    
-    @objc func addButtonTapped() {
-        // Código para cambiar de vista o realizar alguna acción
-        print("Botón añadido pulsado")
-    }
 
     // MARK: - Función para cargar los datos de la URL
     func fetchNewsData() async {
         do {
-            let news = try await Feed.fetchNews()
-            self.projects = news
+            let newsworld = try await WorldFeed.fetchNewsWorld()
+            self.projects = newsworld
             DispatchQueue.main.async {
                 self.tableView.reloadData() // Recargar la tabla con los datos obtenidos
             }
@@ -46,18 +44,18 @@ class TableViewController: UITableViewController {
         }
     }
 
-    // MARK: - Table view data source
+    // MARK: - Métodos de UITableViewDataSource y UITableViewDelegate
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return projects.count
     }
 
     // Configuración de cada celda
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectCell", for: indexPath) as! ProjectTableViewCell
         
         // Obtén el proyecto actual (en tu caso, se llaman "Response")
@@ -82,7 +80,6 @@ class TableViewController: UITableViewController {
         return cell
     }
 
-    
     // Función para descargar imágenes desde una URL
     func loadImage(from url: URL, into imageView: UIImageView) {
         URLSession.shared.dataTask(with: url) { data, response, error in
@@ -102,10 +99,32 @@ class TableViewController: UITableViewController {
     }
 
     // Preparación para el segue
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nextView = segue.destination as! ProjectViewController
-        let index = tableView.indexPathForSelectedRow?.row
-        let h = projects[index!]
-        nextView.selectedproject = h
+override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "showNewsDetail" {
+        // Este segue es para mostrar los detalles de una noticia específica
+        if let nextView = segue.destination as? ProjectWorldViewController,
+           let index = tableView.indexPathForSelectedRow?.row {
+            let h = projects[index]
+            nextView.selectedworldproject = h
+        }
+    } else if segue.identifier == "showGlobalNews" {
+        // Este segue es para el botón que cambia a otra pantalla
+        // Configura el destino según sea necesario, por ejemplo:
+        let otherViewController = segue.destination as? WorldNewsTableViewController
+        // Configura `otherViewController` con la información necesaria
     }
+}
+
+
+    //Ocultar la navbar en la pantalla principal de news
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+
 }
