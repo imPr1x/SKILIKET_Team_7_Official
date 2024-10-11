@@ -16,6 +16,8 @@ class registerAdminViewController: UIViewController, UIDocumentPickerDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
+    @IBOutlet weak var registerButton: UIButton!
+    
     @IBOutlet weak var uploadButton: UIButton!
     
     @IBAction func uploadButtonTapped(_ sender: UIButton) {
@@ -57,7 +59,7 @@ class registerAdminViewController: UIViewController, UIDocumentPickerDelegate {
         }
 
         // Si no hay errores, realizar el segue.
-        performSegue(withIdentifier: "confirmEmailSegue", sender: self)
+        performSegue(withIdentifier: "requestSentIdentifier", sender: self)
     }
     
     // Función para mostrar alertas
@@ -97,19 +99,59 @@ class registerAdminViewController: UIViewController, UIDocumentPickerDelegate {
         super.viewDidLoad()
         circleView.layer.cornerRadius = circleView.frame.size.width / 2
         circleView.layer.masksToBounds = true
-
+        setupCircularButton()
+        setupHideKeyboardOnTap()
+        setupKeyboardNotifications()
         // Do any additional setup after loading the view.
     }
     
+    func setupCircularButton() {
+        // Asegura que el botón tenga dimensiones iguales para que sea un círculo perfecto
+        registerButton.heightAnchor.constraint(equalTo: registerButton.widthAnchor).isActive = true
 
-    /*
+        // Configura el radio de las esquinas para hacer el botón circular
+        registerButton.layer.cornerRadius = registerButton.frame.height / 2
+        registerButton.clipsToBounds = true
+    }
+    
+    func setupHideKeyboardOnTap() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    func setupKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if view.frame.origin.y == 0 {
+                view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if view.frame.origin.y != 0 {
+            view.frame.origin.y = 0
+        }
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "requestSentIdentifier", let confirmVC = segue.destination as? requestSentViewController{
+        }
     }
-    */
+    
 
 }

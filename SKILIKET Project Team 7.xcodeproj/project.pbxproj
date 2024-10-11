@@ -16,6 +16,7 @@
 		348893E92CAF6F630068E5BF /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348893E82CAF6F630068E5BF /* ProjectViewController.swift */; };
 		348893EB2CAFC8140068E5BF /* successViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348893EA2CAFC8140068E5BF /* successViewController.swift */; };
 		348893ED2CAFD1F20068E5BF /* registerAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348893EC2CAFD1F20068E5BF /* registerAdminViewController.swift */; };
+		348B71382CB8F2E4000420B3 /* requestSentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B71372CB8F2E4000420B3 /* requestSentViewController.swift */; };
 		349DE7F72CB728CC00297558 /* GlobalNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349DE7F62CB728CC00297558 /* GlobalNewsViewController.swift */; };
 		349DE7F92CB7768100297558 /* ReportUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349DE7F82CB7768100297558 /* ReportUploadViewController.swift */; };
 		CA10E21E2CA8F42C0029568B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA10E21D2CA8F42C0029568B /* AppDelegate.swift */; };
@@ -48,6 +49,7 @@
 		348893E82CAF6F630068E5BF /* ProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
 		348893EA2CAFC8140068E5BF /* successViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = successViewController.swift; sourceTree = "<group>"; };
 		348893EC2CAFD1F20068E5BF /* registerAdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerAdminViewController.swift; sourceTree = "<group>"; };
+		348B71372CB8F2E4000420B3 /* requestSentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestSentViewController.swift; sourceTree = "<group>"; };
 		349DE7F62CB728CC00297558 /* GlobalNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalNewsViewController.swift; sourceTree = "<group>"; };
 		349DE7F82CB7768100297558 /* ReportUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUploadViewController.swift; sourceTree = "<group>"; };
 		CA10E21A2CA8F42C0029568B /* SKILIKET Project Team 7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SKILIKET Project Team 7.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +106,7 @@
 				CA9E56232CB5ED39001C8AC2 /* LocalNewsViewController.swift */,
 				349DE7F62CB728CC00297558 /* GlobalNewsViewController.swift */,
 				349DE7F82CB7768100297558 /* ReportUploadViewController.swift */,
+				348B71372CB8F2E4000420B3 /* requestSentViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				CA34720F2CB2965D00E1F430 /* WorldNewsTableViewController.swift in Sources */,
 				CAB4ED932CB067CE0035E4F2 /* UsersViewController.swift in Sources */,
 				CA3472172CB359C400E1F430 /* yourProjectsTableViewController.swift in Sources */,
+				348B71382CB8F2E4000420B3 /* requestSentViewController.swift in Sources */,
 				3415FE0D2CAC802000B6F5CE /* LoginRegisterViewController.swift in Sources */,
 				CAB4ED8A2CAA404F0035E4F2 /* FeedJSON.swift in Sources */,
 				CA34721B2CB35E3500E1F430 /* yourProjectsViewController.swift in Sources */,

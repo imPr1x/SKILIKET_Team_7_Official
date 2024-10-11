@@ -31,7 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 UITabBar.appearance().tintColor = UIColor.white // Color de los ítems seleccionados
                 UITabBar.appearance().unselectedItemTintColor = UIColor.gray // Color de los ítems no seleccionados
 
-
         return true
     }
 

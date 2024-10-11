@@ -14,8 +14,24 @@ class LoginRegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCircularButton()
+    }
+    
+    func setupCircularButton() {
+        // Asegura que el botón tenga dimensiones iguales para que sea un círculo perfecto
+        registerButton.heightAnchor.constraint(equalTo: registerButton.widthAnchor).isActive = true
 
-        // Do any additional setup after loading the view.
+        // Configura el radio de las esquinas para hacer el botón circular
+        registerButton.layer.cornerRadius = registerButton.frame.height / 2
+        registerButton.clipsToBounds = true
+
+        // Asegura que el botón tenga dimensiones iguales para que sea un círculo perfecto
+        loginButton.heightAnchor.constraint(equalTo: loginButton.widthAnchor).isActive = true
+
+        // Configura el radio de las esquinas para hacer el botón circular
+        loginButton.layer.cornerRadius = loginButton.frame.height / 2
+        loginButton.clipsToBounds = true
+        
     }
     
 
