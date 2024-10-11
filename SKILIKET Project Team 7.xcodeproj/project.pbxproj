@@ -19,6 +19,8 @@
 		348B71382CB8F2E4000420B3 /* requestSentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B71372CB8F2E4000420B3 /* requestSentViewController.swift */; };
 		349DE7F72CB728CC00297558 /* GlobalNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349DE7F62CB728CC00297558 /* GlobalNewsViewController.swift */; };
 		349DE7F92CB7768100297558 /* ReportUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349DE7F82CB7768100297558 /* ReportUploadViewController.swift */; };
+		34A6FE8F2CB9BC2100CBF351 /* networkStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6FE8E2CB9BC2100CBF351 /* networkStatusViewController.swift */; };
+		34A6FE912CB9C13F00CBF351 /* networkStatusUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6FE902CB9C13F00CBF351 /* networkStatusUserViewController.swift */; };
 		CA10E21E2CA8F42C0029568B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA10E21D2CA8F42C0029568B /* AppDelegate.swift */; };
 		CA10E2202CA8F42C0029568B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA10E21F2CA8F42C0029568B /* SceneDelegate.swift */; };
 		CA10E2222CA8F42C0029568B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA10E2212CA8F42C0029568B /* ViewController.swift */; };
@@ -52,6 +54,8 @@
 		348B71372CB8F2E4000420B3 /* requestSentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestSentViewController.swift; sourceTree = "<group>"; };
 		349DE7F62CB728CC00297558 /* GlobalNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalNewsViewController.swift; sourceTree = "<group>"; };
 		349DE7F82CB7768100297558 /* ReportUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUploadViewController.swift; sourceTree = "<group>"; };
+		34A6FE8E2CB9BC2100CBF351 /* networkStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = networkStatusViewController.swift; sourceTree = "<group>"; };
+		34A6FE902CB9C13F00CBF351 /* networkStatusUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = networkStatusUserViewController.swift; sourceTree = "<group>"; };
 		CA10E21A2CA8F42C0029568B /* SKILIKET Project Team 7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SKILIKET Project Team 7.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA10E21D2CA8F42C0029568B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA10E21F2CA8F42C0029568B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 				349DE7F62CB728CC00297558 /* GlobalNewsViewController.swift */,
 				349DE7F82CB7768100297558 /* ReportUploadViewController.swift */,
 				348B71372CB8F2E4000420B3 /* requestSentViewController.swift */,
+				34A6FE8E2CB9BC2100CBF351 /* networkStatusViewController.swift */,
+				34A6FE902CB9C13F00CBF351 /* networkStatusUserViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -237,10 +243,12 @@
 				CA10E2222CA8F42C0029568B /* ViewController.swift in Sources */,
 				CA34721F2CB3669B00E1F430 /* suggestedProjectJSON.swift in Sources */,
 				348893E72CAF5A730068E5BF /* PageDataViewController.swift in Sources */,
+				34A6FE8F2CB9BC2100CBF351 /* networkStatusViewController.swift in Sources */,
 				CAB4ED912CB061640035E4F2 /* userJSON.swift in Sources */,
 				349DE7F92CB7768100297558 /* ReportUploadViewController.swift in Sources */,
 				348893D72CAF52A60068E5BF /* loginViewController.swift in Sources */,
 				348893E92CAF6F630068E5BF /* ProjectViewController.swift in Sources */,
+				34A6FE912CB9C13F00CBF351 /* networkStatusUserViewController.swift in Sources */,
 				348893E12CAF59650068E5BF /* ProjectPageViewController.swift in Sources */,
 				CA10E21E2CA8F42C0029568B /* AppDelegate.swift in Sources */,
 				348893EB2CAFC8140068E5BF /* successViewController.swift in Sources */,

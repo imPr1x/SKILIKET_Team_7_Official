@@ -8,7 +8,9 @@ import UIKit
 import UniformTypeIdentifiers // Importa este para iOS 14+
 
 class registerAdminViewController: UIViewController, UIDocumentPickerDelegate {
-    
+    var isFileUploaded = false
+
+    @IBOutlet weak var addresTextField: UITextField!
     @IBOutlet weak var checkboxButton: UIButton!
     @IBOutlet weak var circleView: UIView!
     @IBOutlet weak var emailTextField: UITextField!
@@ -41,6 +43,7 @@ class registerAdminViewController: UIViewController, UIDocumentPickerDelegate {
         guard let name = nameTextField.text, !name.isEmpty,
               let email = emailTextField.text, !email.isEmpty,
               let password = passwordTextField.text, !password.isEmpty,
+              let addres = addresTextField.text,!addres.isEmpty,
               let confirmPassword = confirmPasswordTextField.text, !confirmPassword.isEmpty else {
             showAlert(withTitle: "Error", message: "Please fill in all fields.")
             return
@@ -55,6 +58,12 @@ class registerAdminViewController: UIViewController, UIDocumentPickerDelegate {
         // Tercero, verifica que el checkbox esté seleccionado.
         guard checkboxButton.isSelected else {
             showAlert(withTitle: "Error", message: "You must agree to the Terms & Conditions.")
+            return
+        }
+        
+        // Cuarto, verifica si se ha subido un documento.
+        guard isFileUploaded else {
+            showAlert(withTitle: "Error", message: "Please upload the required document.")
             return
         }
 

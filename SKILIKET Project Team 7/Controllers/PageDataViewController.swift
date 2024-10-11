@@ -59,5 +59,30 @@ class PageDataViewController: UIViewController {
                 print("Error al cargar la imagen: \(error)")
             }
         }
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupCircularButton()
+        setupOvalImageView()
     }
+    
+    func setupCircularButton() {
+        // Asegura que el botón tenga dimensiones iguales para que sea un círculo perfecto
+        selectButton.heightAnchor.constraint(equalTo: selectButton.widthAnchor).isActive = true
+
+        // Configura el radio de las esquinas para hacer el botón circular
+        selectButton.layer.cornerRadius = selectButton.frame.height / 2
+        selectButton.clipsToBounds = true
+    }
+    
+    func setupOvalImageView() {
+        // Asegúrate de que la vista de imagen tenga dimensiones antes de ajustar el cornerRadius
+        imageView.layoutIfNeeded()
+        
+        // Ajustar el cornerRadius para formar un óvalo
+        let radius = min(imageView.frame.width, imageView.frame.height) / 2
+        imageView.layer.cornerRadius = radius
+        imageView.clipsToBounds = true
+    }
+
+}
