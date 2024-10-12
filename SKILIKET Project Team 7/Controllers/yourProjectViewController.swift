@@ -1,28 +1,21 @@
 //
-//  GlobalNewsViewController.swift
+//  yourProjectViewController.swift
 //  SKILIKET Project Team 7
 //
-//  Created by Ramir Alcocer on 09/10/24.
+//  Created by Fernando Chiñas on 06/10/24.
 //
 
 import UIKit
 
-class GlobalNewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class yourProjectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var userIcon: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
-    var projects = NewsWorld()
+    // Array de respuestas que contendrá los datos obtenidos desde el JSON remoto
+    var projects = yourprojects()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Asegura que la imagen se ajuste al marco de la UIImageView
-        userIcon.contentMode = .scaleAspectFill
-        
-        // Hace que la imagen sea redonda
-        userIcon.layer.cornerRadius = userIcon.frame.width / 2
-        userIcon.clipsToBounds = true
-        
 
         // Asignar delegado y fuente de datos
         tableView.delegate = self
@@ -33,15 +26,15 @@ class GlobalNewsViewController: UIViewController, UITableViewDelegate, UITableVi
 
         // Cargar los datos desde la URL
         Task {
-            await fetchNewsData()
+            await fetchyourProjectsData()
         }
     }
 
     // MARK: - Función para cargar los datos de la URL
-    func fetchNewsData() async {
+    func fetchyourProjectsData() async {
         do {
-            let newsworld = try await WorldFeed.fetchNewsWorld()
-            self.projects = newsworld
+            let projectsData = try await YourProject.fetchyourProjects()
+            self.projects = projectsData
             DispatchQueue.main.async {
                 self.tableView.reloadData() // Recargar la tabla con los datos obtenidos
             }
@@ -72,6 +65,7 @@ class GlobalNewsViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.projectDescription.text = project.description
         cell.projectDate.text = project.date
         cell.projectUser.text = project.userName
+
         
         // Cargar la imagen del proyecto desde una URL
         if let projectImageURL = URL(string: project.imageName) {
@@ -104,36 +98,18 @@ class GlobalNewsViewController: UIViewController, UITableViewDelegate, UITableVi
         }.resume()
     }
 
-
     // Preparación para el segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showNewsDetail" {
-            // Este segue es para mostrar los detalles de una noticia específica
-            if let nextView = segue.destination as? ProjectWorldViewController,
+        if segue.identifier == "showYourProjectsDetail" {
+            if let nextView = segue.destination as? yourProjectsViewController,
                let index = tableView.indexPathForSelectedRow?.row {
-                let h = projects[index]
-                nextView.selectedworldproject = h
-            }
-        } else if segue.identifier == "showGlobalNews" {
-            // Este segue es para el botón que cambia a otra pantalla
-            // Configura el destino según sea necesario
-            if let otherViewController = segue.destination as? WorldNewsTableViewController {
-                // Configura `otherViewController` con la información necesaria
-                // Añade cualquier código necesario aquí
-            }
-        } else if segue.identifier == "showGlobalNewsDetail" {
-            // Este segue es para mostrar los detalles de una noticia específica
-            if let nextView = segue.destination as? ProjectWorldViewController,
-               let index = tableView.indexPathForSelectedRow?.row {
-                let h = projects[index]
-                nextView.selectedworldproject = h
+                let project = projects[index]
+                nextView.yourProjectSelected = project
             }
         }
     }
-
-
-
-    //Ocultar la navbar en la pantalla principal de news
+    
+    //Ocultar la navbar en la pantalla principal de proyectos
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -145,3 +121,4 @@ class GlobalNewsViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
 }
+

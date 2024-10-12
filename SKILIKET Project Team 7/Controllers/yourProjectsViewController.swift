@@ -8,13 +8,16 @@
 import UIKit
 
 class yourProjectsViewController: UIViewController {
-
+    
     
     var yourProjectSelected: yourproject?
     
     
     
+    
+
     @IBOutlet weak var titleproject: UILabel!
+    
     @IBOutlet weak var locationproject: UILabel!
     @IBOutlet weak var nameproject: UILabel!
     @IBOutlet weak var descriptionproject: UILabel!

@@ -35,6 +35,7 @@
 		CA34721B2CB35E3500E1F430 /* yourProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA34721A2CB35E3500E1F430 /* yourProjectsViewController.swift */; };
 		CA34721F2CB3669B00E1F430 /* suggestedProjectJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA34721E2CB3669B00E1F430 /* suggestedProjectJSON.swift */; };
 		CA9E56242CB5ED39001C8AC2 /* LocalNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9E56232CB5ED39001C8AC2 /* LocalNewsViewController.swift */; };
+		CA9E56262CBA7A33001C8AC2 /* yourProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9E56252CBA7A33001C8AC2 /* yourProjectViewController.swift */; };
 		CAB4ED852CAA11970035E4F2 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB4ED842CAA11970035E4F2 /* ProjectTableViewCell.swift */; };
 		CAB4ED8A2CAA404F0035E4F2 /* FeedJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB4ED892CAA404F0035E4F2 /* FeedJSON.swift */; };
 		CAB4ED912CB061640035E4F2 /* userJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB4ED902CB061640035E4F2 /* userJSON.swift */; };
@@ -72,6 +73,7 @@
 		CA34721A2CB35E3500E1F430 /* yourProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yourProjectsViewController.swift; sourceTree = "<group>"; };
 		CA34721E2CB3669B00E1F430 /* suggestedProjectJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = suggestedProjectJSON.swift; sourceTree = "<group>"; };
 		CA9E56232CB5ED39001C8AC2 /* LocalNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNewsViewController.swift; sourceTree = "<group>"; };
+		CA9E56252CBA7A33001C8AC2 /* yourProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yourProjectViewController.swift; sourceTree = "<group>"; };
 		CAB4ED842CAA11970035E4F2 /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
 		CAB4ED892CAA404F0035E4F2 /* FeedJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedJSON.swift; sourceTree = "<group>"; };
 		CAB4ED902CB061640035E4F2 /* userJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userJSON.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				348B71372CB8F2E4000420B3 /* requestSentViewController.swift */,
 				34A6FE8E2CB9BC2100CBF351 /* networkStatusViewController.swift */,
 				34A6FE902CB9C13F00CBF351 /* networkStatusUserViewController.swift */,
+				CA9E56252CBA7A33001C8AC2 /* yourProjectViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				34A6FE912CB9C13F00CBF351 /* networkStatusUserViewController.swift in Sources */,
 				348893E12CAF59650068E5BF /* ProjectPageViewController.swift in Sources */,
 				CA10E21E2CA8F42C0029568B /* AppDelegate.swift in Sources */,
+				CA9E56262CBA7A33001C8AC2 /* yourProjectViewController.swift in Sources */,
 				348893EB2CAFC8140068E5BF /* successViewController.swift in Sources */,
 				CA3472192CB35B9100E1F430 /* yourProjectJSON.swift in Sources */,
 				348893D52CAF37850068E5BF /* confirmEmailViewController.swift in Sources */,
