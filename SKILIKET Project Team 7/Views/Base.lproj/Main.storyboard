@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5iy-Qj-Xzn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yX1-OH-puM">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
@@ -723,7 +723,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="yX1-OH-puM" eventType="touchUpInside" id="qcm-gL-yQx"/>
-                                    <segue destination="whU-Wt-JOf" kind="presentation" identifier="showProjectPage" modalPresentationStyle="fullScreen" id="g8D-L7-hQz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Epg-5Z-xzs">
@@ -2183,14 +2182,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Zw8-te-6AG"/>
         <segue reference="wls-g7-6Wc"/>
         <segue reference="lyq-Wy-WA6"/>
         <segue reference="1yg-Nx-RxS"/>
-        <segue reference="g8D-L7-hQz"/>
         <segue reference="Aje-ib-SzU"/>
         <segue reference="eVd-wR-aVI"/>
-        <segue reference="JgA-LD-fDz"/>
+        <segue reference="RfC-BE-lQi"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="TRACK" width="315" height="12"/>

@@ -28,14 +28,14 @@ class loginViewController: UIViewController {
             await fetchUserData(email: email, password: password)
         }
     }
-    
+
     // Función para autenticar al usuario
     func authenticateUser(email: String, password: String) -> User? {
-        return usersData.first { $0.mail == email && $0.password == password }
+        // Verifica si existe un usuario en el JSON con el email y la contraseña proporcionados
+        return usersData.first { $0.mail.lowercased() == email.lowercased() && $0.password == password }
     }
-    
-    // Funcion para la persistencia de datos, esta funcion convierte el objeto user en un formato JSON y lo guarda en UserDefaults
-    // Created by Fernando
+
+    // Función para la persistencia de datos
     func saveUserToUserDefaults(user: User) {
         do {
             let encoder = JSONEncoder()
@@ -46,13 +46,14 @@ class loginViewController: UIViewController {
         }
     }
 
-    
     // Muestra una alerta
     func showAlert(withTitle title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default)
-        alertController.addAction(okAction)
-        present(alertController, animated: true)
+        DispatchQueue.main.async {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true)
+        }
     }
     
     // Obtener los datos del archivo JSON
@@ -60,84 +61,51 @@ class loginViewController: UIViewController {
         do {
             let users = try await Users.fetchData()  // Llama al método que obtiene los datos del JSON
             self.usersData = users
-            
+
+            guard !usersData.isEmpty else {
+                showAlert(withTitle: "Login Failed", message: "No user data found.")
+                return
+            }
+
             // Verifica las credenciales del usuario
             if let authenticatedUser = authenticateUser(email: email, password: password) {
-                
                 // Guarda el usuario autenticado en UserDefaults para la persistencia
-                // Created by Fernando
                 saveUserToUserDefaults(user: authenticatedUser)
-                // Si las credenciales son correctas, hace el segue
-                performSegue(withIdentifier: "showProjectPage", sender: authenticatedUser)
+                
+                // Asegúrate de realizar la presentación manual en el hilo principal
+                if self.presentedViewController == nil {
+                    DispatchQueue.main.async {
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        if let projectPageVC = storyboard.instantiateViewController(withIdentifier: "ProjectPageViewController") as? ProjectPageViewController {
+                            projectPageVC.user = authenticatedUser
+                            projectPageVC.modalPresentationStyle = .fullScreen  // Presenta en pantalla completa
+                            self.present(projectPageVC, animated: true, completion: nil)
+                        }
+                    }
+                } else {
+                    print("Ya hay una vista presentada, no se puede realizar el segue")
+                }
             } else {
                 showAlert(withTitle: "Login Failed", message: "Invalid email or password.")
             }
-            
-            
         } catch {
-            print("Error al obtener los datos: \(error.localizedDescription)")
             showAlert(withTitle: "Error", message: "Unable to fetch user data.")
         }
     }
-    
-    
-    // Funcion para cuando se necesite recuperar los datos del usuario, es decir, se podrán leer desde UserDefaults y decodificarlos
-    func getAuthenticatedUser() -> User? {
-        guard let data = UserDefaults.standard.data(forKey: "authenticatedUser") else {
-            return nil
-        }
-        do {
-            let decoder = JSONDecoder()
-            let user = try decoder.decode(User.self, from: data)
-            return user
-        } catch {
-            print("Error al cargar el usuario desde UserDefaults: \(error)")
-            return nil
-        }
-    }
 
-    
-    
-    /*
-     // Created by Fernando
-     IMPLEMENTAR CUANDO QUIERA MANDARSE A LLAMAR EN OTRA VISTA
-     override func viewDidLoad() {
-         super.viewDidLoad()
-         
-         if let user = getAuthenticatedUser() {
-             print("Usuario autenticado: \(user.fullname)")
-             // Aquí puedes usar la información del usuario
-         } else {
-             print("No hay un usuario autenticado")
-         }
-     }
-     */
-    
-    
-     // Prepara el segue para pasar los datos del usuario autenticado a la siguiente vista
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showProjectPage", let destinationVC = segue.destination as? ProjectPageViewController {
-            destinationVC.user = sender as? User // Asegúrate de que `ProjectPageViewController` tiene una propiedad `user`
-        }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupHideKeyboardOnTap()
+        setupKeyboardNotifications()
+        setupCircularButton()
     }
-
-     
-     override func viewDidLoad() {
-     super.viewDidLoad()
-     setupHideKeyboardOnTap()
-     setupKeyboardNotifications()
-     setupCircularButton()
-     }
     
     func setupCircularButton() {
         // Asegura que el botón tenga dimensiones iguales para que sea un círculo perfecto
         loginButton.heightAnchor.constraint(equalTo: loginButton.widthAnchor).isActive = true
-
-        // Configura el radio de las esquinas para hacer el botón circular
         loginButton.layer.cornerRadius = loginButton.frame.height / 2
         loginButton.clipsToBounds = true
     }
-    
     
     func setupHideKeyboardOnTap() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -170,7 +138,4 @@ class loginViewController: UIViewController {
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-    
 }
-     
-

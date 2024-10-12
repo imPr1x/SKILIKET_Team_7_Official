@@ -18,6 +18,24 @@ class PageDataViewController: UIViewController {
     var descriptionText: String?
     
     var imageURL: URL?  // Propiedad para almacenar la URL de la imagen
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        titleLabel.text = titleText
+        descriptionLabel.text = descriptionText
+        
+        // Si tienes la URL de la imagen almacenada, llama al método para cargar la imagen aquí
+        if let imageURL = imageURL {
+            Task {
+                await loadImage(from: imageURL)
+            }
+        } else {
+            print("No se proporcionó una URL válida para la imagen")
+        }
+        setupCircularButton()
+        setupOvalImageView()
+    }
         
         override func viewDidAppear(_ animated: Bool) {
             super.viewDidAppear(animated)
@@ -60,11 +78,7 @@ class PageDataViewController: UIViewController {
             }
         }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupCircularButton()
-        setupOvalImageView()
-    }
+
     
     func setupCircularButton() {
         // Asegura que el botón tenga dimensiones iguales para que sea un círculo perfecto

@@ -16,20 +16,28 @@ class ProjectPageViewController: UIPageViewController, UIPageViewControllerDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        guard let authenticatedUser = user else {
+            print("No authenticated user. Projects will not be loaded.")
+            return
+        }
+
+        print("Authenticated user: \(authenticatedUser.fullname)")
+        
         self.dataSource = self
         
-        // Llamamos al método para cargar los datos del JSON
+        // Cargar los datos del JSON y configurar las páginas
         Task {
             await loadSuggestedProjects()
         }
     }
-    
+
     // Método para cargar los proyectos desde el JSON
     func loadSuggestedProjects() async {
         do {
             let projects = try await Suggested.fetchSuggested()  // Llamada al método para obtener el JSON
             self.suggestedProjects = projects
-            setupPages()  // Llamamos a setupPages para crear las páginas dinámicas con los datos
+            setupPages()  // Configurar las páginas dinámicas con los datos del JSON
         } catch {
             print("Error al cargar proyectos: \(error)")
         }
@@ -77,7 +85,8 @@ class ProjectPageViewController: UIPageViewController, UIPageViewControllerDataS
     
     // Método para crear cada página dinámica
     func createPage(imageURL: String, title: String, description: String) -> UIViewController {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PageDataViewController") as! PageDataViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "PageDataViewController") as! PageDataViewController
 
         // Asignar los valores al controlador de la página
         vc.titleText = title
@@ -90,8 +99,4 @@ class ProjectPageViewController: UIPageViewController, UIPageViewControllerDataS
 
         return vc
     }
-
-
-
 }
-
