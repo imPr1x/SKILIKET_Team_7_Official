@@ -13,60 +13,24 @@ class confirmEmailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupActivityIndicator()
+        scheduleScreenChange()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        verifyEmail()
-    }
 
-    private func setupActivityIndicator() {
-        activityIndicator.center = self.view.center
-        self.view.addSubview(activityIndicator)
+    
+    // Función para cambiar de pantalla después de un delay
+    func scheduleScreenChange() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
+            // Asegúrate de que self aún existe
+            self?.performSegue(withIdentifier: "successIdentifier", sender: self)
+        }
     }
-
-    func verifyEmail() {
-        guard let url = URL(string: "https://api.tuservidor.com/verifyemail") else { return }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let body: [String: String] = [
-            "email": self.email ?? ""
-        ]
-        
-        request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
-        
-        activityIndicator.startAnimating()
-        let session = URLSession.shared
-        let task = session.dataTask(with: request) { [weak self] data, response, error in
-            DispatchQueue.main.async {
-                self?.activityIndicator.stopAnimating()
-                
-                if let error = error {
-                    self?.showAlert(title: "Error", message: "Error verifying email: \(error.localizedDescription)")
-                    return
-                }
-                
-                guard let data = data,
-                      let jsonResponse = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-                      let success = jsonResponse["verified"] as? Bool else {
-                    self?.showAlert(title: "Error", message: "Invalid response from server")
-                    return
-                }
-                
-                if success {
-                    self?.showAlert(title: "Success", message: "Email successfully verified")
-                    // Aquí puedes realizar una transición a otra pantalla si es necesario
-                } else {
-                    self?.showAlert(title: "Failed", message: "Email verification failed")
-                }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "successIdentifier" {
+            if segue.destination is successViewController {
             }
         }
-        
-        task.resume()
     }
 
     func showAlert(title: String, message: String) {

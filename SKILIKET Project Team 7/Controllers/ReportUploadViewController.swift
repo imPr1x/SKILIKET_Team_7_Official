@@ -43,6 +43,16 @@ class ReportUploadViewController: UIViewController, UITableViewDelegate, UITable
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
+        
+        setupCircularButton()
+    }
+    func setupCircularButton() {
+        // Asegura que el botón tenga dimensiones iguales para que sea un círculo perfecto
+        uploadButton.heightAnchor.constraint(equalTo: uploadButton.widthAnchor).isActive = true
+
+        // Configura el radio de las esquinas para hacer el botón circular
+        uploadButton.layer.cornerRadius = uploadButton.frame.height / 2
+        uploadButton.clipsToBounds = true
     }
     
     //Funcion para esconder el teclado.

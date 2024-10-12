@@ -10,6 +10,7 @@ import UIKit
 class networkStatusViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
 
+    @IBOutlet weak var buttonDownload: UIButton!
     @IBOutlet weak var buttonSelectProject: UIButton!
     
     @IBOutlet weak var buttonSelectDevice: UIButton!
@@ -23,6 +24,8 @@ class networkStatusViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCircularButton()
+        
         
         //Configura el delegado y la fuente de datos de la tabla, y registra la celda personalizada.
         tableView.delegate = self
@@ -42,9 +45,14 @@ class networkStatusViewController: UIViewController, UITableViewDelegate, UITabl
     @IBAction func onClickSelectDevice(_ sender: Any) {
         dataSource = ["Device 1", "Device 2", "Device 3"]
         selectedButton = buttonSelectDevice
-        addTransparentView(frames: buttonSelectProject.frame)
+        addTransparentView(frames: buttonSelectDevice.frame)
     }
     
+    
+    @IBAction func downloadButton(_ sender: Any) {
+        
+        
+    }
     
     func addTransparentView(frames: CGRect) {
         // Intenta obtener la ventana clave actual y configura el marco de la vista transparente.
@@ -109,15 +117,14 @@ class networkStatusViewController: UIViewController, UITableViewDelegate, UITabl
         removeTransparentView()
     }
     
+    
+    func setupCircularButton() {
+        // Asegura que el botón tenga dimensiones iguales para que sea un círculo perfecto
+        buttonDownload.heightAnchor.constraint(equalTo: buttonDownload.widthAnchor).isActive = true
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        // Configura el radio de las esquinas para hacer el botón circular
+        buttonDownload.layer.cornerRadius = buttonDownload.frame.height / 2
+        buttonDownload.clipsToBounds = true
     }
-    */
 
 }
