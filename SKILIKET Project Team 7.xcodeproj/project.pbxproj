@@ -33,7 +33,6 @@
 		CA3472192CB35B9100E1F430 /* yourProjectJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3472182CB35B9100E1F430 /* yourProjectJSON.swift */; };
 		CA34721B2CB35E3500E1F430 /* yourProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA34721A2CB35E3500E1F430 /* yourProjectsViewController.swift */; };
 		CA34721F2CB3669B00E1F430 /* suggestedProjectJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA34721E2CB3669B00E1F430 /* suggestedProjectJSON.swift */; };
-		CA6677462CBCFD76009ABF36 /* networkStatusAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6677452CBCFD76009ABF36 /* networkStatusAdminViewController.swift */; };
 		CA6677482CBCFE45009ABF36 /* networkAdminJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6677472CBCFE45009ABF36 /* networkAdminJSON.swift */; };
 		CA9E56242CB5ED39001C8AC2 /* LocalNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9E56232CB5ED39001C8AC2 /* LocalNewsViewController.swift */; };
 		CA9E56262CBA7A33001C8AC2 /* yourProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9E56252CBA7A33001C8AC2 /* yourProjectViewController.swift */; };
@@ -73,7 +72,6 @@
 		CA3472182CB35B9100E1F430 /* yourProjectJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yourProjectJSON.swift; sourceTree = "<group>"; };
 		CA34721A2CB35E3500E1F430 /* yourProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yourProjectsViewController.swift; sourceTree = "<group>"; };
 		CA34721E2CB3669B00E1F430 /* suggestedProjectJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = suggestedProjectJSON.swift; sourceTree = "<group>"; };
-		CA6677452CBCFD76009ABF36 /* networkStatusAdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = networkStatusAdminViewController.swift; sourceTree = "<group>"; };
 		CA6677472CBCFE45009ABF36 /* networkAdminJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = networkAdminJSON.swift; sourceTree = "<group>"; };
 		CA9E56232CB5ED39001C8AC2 /* LocalNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNewsViewController.swift; sourceTree = "<group>"; };
 		CA9E56252CBA7A33001C8AC2 /* yourProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yourProjectViewController.swift; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 				348B71372CB8F2E4000420B3 /* requestSentViewController.swift */,
 				34A6FE8E2CB9BC2100CBF351 /* networkStatusViewController.swift */,
 				CA9E56252CBA7A33001C8AC2 /* yourProjectViewController.swift */,
-				CA6677452CBCFD76009ABF36 /* networkStatusAdminViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -275,7 +272,6 @@
 				CAB4ED8A2CAA404F0035E4F2 /* FeedJSON.swift in Sources */,
 				CA9E56282CBC8FA3001C8AC2 /* networkJSON.swift in Sources */,
 				CA34721B2CB35E3500E1F430 /* yourProjectsViewController.swift in Sources */,
-				CA6677462CBCFD76009ABF36 /* networkStatusAdminViewController.swift in Sources */,
 				348893ED2CAFD1F20068E5BF /* registerAdminViewController.swift in Sources */,
 				CA3472152CB2AE9E00E1F430 /* ProjectWorldViewController.swift in Sources */,
 				CAB4ED852CAA11970035E4F2 /* ProjectTableViewCell.swift in Sources */,

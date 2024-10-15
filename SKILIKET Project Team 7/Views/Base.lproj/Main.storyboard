@@ -2064,10 +2064,10 @@
             </objects>
             <point key="canvasLocation" x="2400.7633587786258" y="1952.1126760563382"/>
         </scene>
-        <!--Network Status Admin View Controller-->
+        <!--View Controller-->
         <scene sceneID="kDR-dW-F3r">
             <objects>
-                <viewController id="NBp-60-sUY" customClass="networkStatusAdminViewController" customModule="SKILIKET_Project_Team_7" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NBp-60-sUY" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KF0-o7-OQr">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2289,7 +2289,7 @@
         <!-- -->
         <scene sceneID="XSb-J0-v3H">
             <objects>
-                <viewController id="LZm-AZ-8i0" customClass="yourProjectsViewController" customModule="SKILIKET_Project_Team_7" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LZm-AZ-8i0" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hgn-qD-iEN">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="1180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
