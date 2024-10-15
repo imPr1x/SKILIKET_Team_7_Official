@@ -58,21 +58,18 @@ extension YourProject {
         let (data, response) = try await URLSession.shared.data(from: urlComponents.url!)
         let jsonDecoder = JSONDecoder()
         
-        
         if let jsonString = String(data: data, encoding: .utf8) {
-             print("JSON recibido: \(jsonString)")
-         }
-         
-         
+            print("JSON recibido: \(jsonString)")
+        }
         
         if let httpResponse = response as? HTTPURLResponse,
            httpResponse.statusCode == 200,
            let newResponse = try? jsonDecoder.decode(YourProject.self, from: data) {
             return newResponse.yourProject
-        }
-        else {
-            print("Hubo un error al recuperar la informacion")
-            throw NewError.notConnected
+        } else {
+            print("Hubo un error al recuperar la información")
+            throw yourprojectError.notConnected
         }
     }
 }
+

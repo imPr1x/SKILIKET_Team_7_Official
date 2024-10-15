@@ -20,7 +20,6 @@
 		349DE7F72CB728CC00297558 /* GlobalNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349DE7F62CB728CC00297558 /* GlobalNewsViewController.swift */; };
 		349DE7F92CB7768100297558 /* ReportUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349DE7F82CB7768100297558 /* ReportUploadViewController.swift */; };
 		34A6FE8F2CB9BC2100CBF351 /* networkStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6FE8E2CB9BC2100CBF351 /* networkStatusViewController.swift */; };
-		34A6FE912CB9C13F00CBF351 /* networkStatusUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6FE902CB9C13F00CBF351 /* networkStatusUserViewController.swift */; };
 		CA10E21E2CA8F42C0029568B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA10E21D2CA8F42C0029568B /* AppDelegate.swift */; };
 		CA10E2202CA8F42C0029568B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA10E21F2CA8F42C0029568B /* SceneDelegate.swift */; };
 		CA10E2222CA8F42C0029568B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA10E2212CA8F42C0029568B /* ViewController.swift */; };
@@ -34,8 +33,11 @@
 		CA3472192CB35B9100E1F430 /* yourProjectJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3472182CB35B9100E1F430 /* yourProjectJSON.swift */; };
 		CA34721B2CB35E3500E1F430 /* yourProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA34721A2CB35E3500E1F430 /* yourProjectsViewController.swift */; };
 		CA34721F2CB3669B00E1F430 /* suggestedProjectJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA34721E2CB3669B00E1F430 /* suggestedProjectJSON.swift */; };
+		CA6677462CBCFD76009ABF36 /* networkStatusAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6677452CBCFD76009ABF36 /* networkStatusAdminViewController.swift */; };
+		CA6677482CBCFE45009ABF36 /* networkAdminJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6677472CBCFE45009ABF36 /* networkAdminJSON.swift */; };
 		CA9E56242CB5ED39001C8AC2 /* LocalNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9E56232CB5ED39001C8AC2 /* LocalNewsViewController.swift */; };
 		CA9E56262CBA7A33001C8AC2 /* yourProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9E56252CBA7A33001C8AC2 /* yourProjectViewController.swift */; };
+		CA9E56282CBC8FA3001C8AC2 /* networkJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9E56272CBC8FA3001C8AC2 /* networkJSON.swift */; };
 		CAB4ED852CAA11970035E4F2 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB4ED842CAA11970035E4F2 /* ProjectTableViewCell.swift */; };
 		CAB4ED8A2CAA404F0035E4F2 /* FeedJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB4ED892CAA404F0035E4F2 /* FeedJSON.swift */; };
 		CAB4ED912CB061640035E4F2 /* userJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB4ED902CB061640035E4F2 /* userJSON.swift */; };
@@ -56,7 +58,6 @@
 		349DE7F62CB728CC00297558 /* GlobalNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalNewsViewController.swift; sourceTree = "<group>"; };
 		349DE7F82CB7768100297558 /* ReportUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUploadViewController.swift; sourceTree = "<group>"; };
 		34A6FE8E2CB9BC2100CBF351 /* networkStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = networkStatusViewController.swift; sourceTree = "<group>"; };
-		34A6FE902CB9C13F00CBF351 /* networkStatusUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = networkStatusUserViewController.swift; sourceTree = "<group>"; };
 		CA10E21A2CA8F42C0029568B /* SKILIKET Project Team 7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SKILIKET Project Team 7.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA10E21D2CA8F42C0029568B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA10E21F2CA8F42C0029568B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,8 +73,11 @@
 		CA3472182CB35B9100E1F430 /* yourProjectJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yourProjectJSON.swift; sourceTree = "<group>"; };
 		CA34721A2CB35E3500E1F430 /* yourProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yourProjectsViewController.swift; sourceTree = "<group>"; };
 		CA34721E2CB3669B00E1F430 /* suggestedProjectJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = suggestedProjectJSON.swift; sourceTree = "<group>"; };
+		CA6677452CBCFD76009ABF36 /* networkStatusAdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = networkStatusAdminViewController.swift; sourceTree = "<group>"; };
+		CA6677472CBCFE45009ABF36 /* networkAdminJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = networkAdminJSON.swift; sourceTree = "<group>"; };
 		CA9E56232CB5ED39001C8AC2 /* LocalNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNewsViewController.swift; sourceTree = "<group>"; };
 		CA9E56252CBA7A33001C8AC2 /* yourProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yourProjectViewController.swift; sourceTree = "<group>"; };
+		CA9E56272CBC8FA3001C8AC2 /* networkJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = networkJSON.swift; sourceTree = "<group>"; };
 		CAB4ED842CAA11970035E4F2 /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
 		CAB4ED892CAA404F0035E4F2 /* FeedJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedJSON.swift; sourceTree = "<group>"; };
 		CAB4ED902CB061640035E4F2 /* userJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userJSON.swift; sourceTree = "<group>"; };
@@ -114,8 +118,8 @@
 				349DE7F82CB7768100297558 /* ReportUploadViewController.swift */,
 				348B71372CB8F2E4000420B3 /* requestSentViewController.swift */,
 				34A6FE8E2CB9BC2100CBF351 /* networkStatusViewController.swift */,
-				34A6FE902CB9C13F00CBF351 /* networkStatusUserViewController.swift */,
 				CA9E56252CBA7A33001C8AC2 /* yourProjectViewController.swift */,
+				CA6677452CBCFD76009ABF36 /* networkStatusAdminViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -159,6 +163,8 @@
 				CA3472122CB2995900E1F430 /* worldFeedJSON.swift */,
 				CA3472182CB35B9100E1F430 /* yourProjectJSON.swift */,
 				CA34721E2CB3669B00E1F430 /* suggestedProjectJSON.swift */,
+				CA9E56272CBC8FA3001C8AC2 /* networkJSON.swift */,
+				CA6677472CBCFE45009ABF36 /* networkAdminJSON.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -251,7 +257,6 @@
 				349DE7F92CB7768100297558 /* ReportUploadViewController.swift in Sources */,
 				348893D72CAF52A60068E5BF /* loginViewController.swift in Sources */,
 				348893E92CAF6F630068E5BF /* ProjectViewController.swift in Sources */,
-				34A6FE912CB9C13F00CBF351 /* networkStatusUserViewController.swift in Sources */,
 				348893E12CAF59650068E5BF /* ProjectPageViewController.swift in Sources */,
 				CA10E21E2CA8F42C0029568B /* AppDelegate.swift in Sources */,
 				CA9E56262CBA7A33001C8AC2 /* yourProjectViewController.swift in Sources */,
@@ -268,10 +273,13 @@
 				348B71382CB8F2E4000420B3 /* requestSentViewController.swift in Sources */,
 				3415FE0D2CAC802000B6F5CE /* LoginRegisterViewController.swift in Sources */,
 				CAB4ED8A2CAA404F0035E4F2 /* FeedJSON.swift in Sources */,
+				CA9E56282CBC8FA3001C8AC2 /* networkJSON.swift in Sources */,
 				CA34721B2CB35E3500E1F430 /* yourProjectsViewController.swift in Sources */,
+				CA6677462CBCFD76009ABF36 /* networkStatusAdminViewController.swift in Sources */,
 				348893ED2CAFD1F20068E5BF /* registerAdminViewController.swift in Sources */,
 				CA3472152CB2AE9E00E1F430 /* ProjectWorldViewController.swift in Sources */,
 				CAB4ED852CAA11970035E4F2 /* ProjectTableViewCell.swift in Sources */,
+				CA6677482CBCFE45009ABF36 /* networkAdminJSON.swift in Sources */,
 				CA9E56242CB5ED39001C8AC2 /* LocalNewsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
