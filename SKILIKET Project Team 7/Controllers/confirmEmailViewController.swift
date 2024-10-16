@@ -1,22 +1,17 @@
-//
-//  confirmEmailViewController.swift
-//  SKILIKET Project Team 7
-//
-//  Created by Ramir Alcocer on 03/10/24.
-//
 import UIKit
 
 class confirmEmailViewController: UIViewController {
 
     var email: String?
+    var password: String?  // Si necesitas el password
+    var name: String?      // Si necesitas el nombre
+
     let activityIndicator = UIActivityIndicatorView(style: .large)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         scheduleScreenChange()
     }
-    
-
     
     // Función para cambiar de pantalla después de un delay
     func scheduleScreenChange() {
@@ -27,9 +22,10 @@ class confirmEmailViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "successIdentifier" {
-            if segue.destination is successViewController {
-            }
+        if segue.identifier == "successIdentifier", let successVC = segue.destination as? successViewController {
+            successVC.registeredEmail = email
+            successVC.registeredPassword = password
+            successVC.registeredName = name
         }
     }
 

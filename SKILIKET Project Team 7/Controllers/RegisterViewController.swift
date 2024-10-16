@@ -126,11 +126,13 @@ class RegisterViewController: UIViewController {
     
 
     
-    // MARK: - Navigation
 
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "confirmEmailSegue", let confirmVC = segue.destination as? confirmEmailViewController {
             confirmVC.email = emailTextField.text
+            confirmVC.password = passwordTextField.text
+            confirmVC.name = nameTextField.text
         }
     }
 }
