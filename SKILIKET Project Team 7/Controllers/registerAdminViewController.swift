@@ -8,7 +8,6 @@ import UIKit
 import UniformTypeIdentifiers // Importa este para iOS 14+
 
 class registerAdminViewController: UIViewController, UIDocumentPickerDelegate {
-    var isFileUploaded = false
 
     @IBOutlet weak var addresTextField: UITextField!
     @IBOutlet weak var checkboxButton: UIButton!
@@ -61,14 +60,20 @@ class registerAdminViewController: UIViewController, UIDocumentPickerDelegate {
             return
         }
         
-        // Cuarto, verifica si se ha subido un documento.
-        guard isFileUploaded else {
-            showAlert(withTitle: "Error", message: "Please upload the required document.")
+        // Cuarto, Verifica que el formato del correo electrónico sea válido.
+        guard isValidEmail(email) else {
+            showAlert(withTitle: "Error", message: "Please enter a valid email address.")
             return
         }
 
         // Si no hay errores, realizar el segue.
         performSegue(withIdentifier: "requestSentIdentifier", sender: self)
+    }
+    
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
     }
     
     // Función para mostrar alertas
@@ -138,17 +143,9 @@ class registerAdminViewController: UIViewController, UIDocumentPickerDelegate {
     }
 
     @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            if view.frame.origin.y == 0 {
-                view.frame.origin.y -= keyboardSize.height
-            }
-        }
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
-        if view.frame.origin.y != 0 {
-            view.frame.origin.y = 0
-        }
     }
 
     deinit {

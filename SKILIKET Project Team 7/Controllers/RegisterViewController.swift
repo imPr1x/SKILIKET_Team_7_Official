@@ -42,6 +42,12 @@ class RegisterViewController: UIViewController {
             showAlert(withTitle: "Error", message: "You must agree to the Terms & Conditions.")
             return
         }
+        
+        // Cuarto, Verifica que el formato del correo electrónico sea válido.
+        guard isValidEmail(email) else {
+            showAlert(withTitle: "Error", message: "Please enter a valid email address.")
+            return
+        }
 
         // Si no hay errores, realizar el segue.
         performSegue(withIdentifier: "confirmEmailSegue", sender: self)
@@ -56,6 +62,13 @@ class RegisterViewController: UIViewController {
         alertController.addAction(okAction)
         present(alertController, animated: true)
     }
+    
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
+    }
+
     
     
     @IBAction func checkbox(_ sender: UIButton) {
@@ -100,17 +113,10 @@ class RegisterViewController: UIViewController {
     }
 
     @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            if view.frame.origin.y == 0 {
-                view.frame.origin.y -= keyboardSize.height
-            }
-        }
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
-        if view.frame.origin.y != 0 {
-            view.frame.origin.y = 0
-        }
+
     }
 
     deinit {

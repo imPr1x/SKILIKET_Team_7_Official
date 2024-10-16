@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3411C2922CBED6ED00B30B95 /* projectsAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3411C2912CBED6ED00B30B95 /* projectsAdminViewController.swift */; };
+		3411C2942CBED70100B30B95 /* projectsAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3411C2932CBED70100B30B95 /* projectsAddViewController.swift */; };
 		3415FE0D2CAC802000B6F5CE /* LoginRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415FE0C2CAC802000B6F5CE /* LoginRegisterViewController.swift */; };
 		3415FE0F2CAC88DB00B6F5CE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415FE0E2CAC88DA00B6F5CE /* RegisterViewController.swift */; };
 		348893D52CAF37850068E5BF /* confirmEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348893D42CAF37850068E5BF /* confirmEmailViewController.swift */; };
@@ -44,6 +46,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3411C2912CBED6ED00B30B95 /* projectsAdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projectsAdminViewController.swift; sourceTree = "<group>"; };
+		3411C2932CBED70100B30B95 /* projectsAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projectsAddViewController.swift; sourceTree = "<group>"; };
 		3415FE0C2CAC802000B6F5CE /* LoginRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterViewController.swift; sourceTree = "<group>"; };
 		3415FE0E2CAC88DA00B6F5CE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		348893D42CAF37850068E5BF /* confirmEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = confirmEmailViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +121,8 @@
 				348B71372CB8F2E4000420B3 /* requestSentViewController.swift */,
 				34A6FE8E2CB9BC2100CBF351 /* networkStatusViewController.swift */,
 				CA9E56252CBA7A33001C8AC2 /* yourProjectViewController.swift */,
+				3411C2912CBED6ED00B30B95 /* projectsAdminViewController.swift */,
+				3411C2932CBED70100B30B95 /* projectsAddViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -256,6 +262,7 @@
 				348893E92CAF6F630068E5BF /* ProjectViewController.swift in Sources */,
 				348893E12CAF59650068E5BF /* ProjectPageViewController.swift in Sources */,
 				CA10E21E2CA8F42C0029568B /* AppDelegate.swift in Sources */,
+				3411C2922CBED6ED00B30B95 /* projectsAdminViewController.swift in Sources */,
 				CA9E56262CBA7A33001C8AC2 /* yourProjectViewController.swift in Sources */,
 				348893EB2CAFC8140068E5BF /* successViewController.swift in Sources */,
 				CA3472192CB35B9100E1F430 /* yourProjectJSON.swift in Sources */,
@@ -264,6 +271,7 @@
 				CA10E2202CA8F42C0029568B /* SceneDelegate.swift in Sources */,
 				3415FE0F2CAC88DB00B6F5CE /* RegisterViewController.swift in Sources */,
 				CA3472132CB2995900E1F430 /* worldFeedJSON.swift in Sources */,
+				3411C2942CBED70100B30B95 /* projectsAddViewController.swift in Sources */,
 				CA34720F2CB2965D00E1F430 /* WorldNewsTableViewController.swift in Sources */,
 				CAB4ED932CB067CE0035E4F2 /* UsersViewController.swift in Sources */,
 				CA3472172CB359C400E1F430 /* yourProjectsTableViewController.swift in Sources */,
@@ -428,9 +436,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8R863DUX5M;
+				DEVELOPMENT_TEAM = 9N2V6PYA36;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SKILIKET Project Team 7/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(SKILIKET) Need Camera Access to take photos.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "$(SKILIKET) Need access to a photo library to upload images.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -441,7 +451,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "TEC.SKILIKET-Project-Team-7";
+				PRODUCT_BUNDLE_IDENTIFIER = "TEC.SKILIKET-Project-Team-7-Ramir";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -456,9 +466,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8R863DUX5M;
+				DEVELOPMENT_TEAM = 9N2V6PYA36;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SKILIKET Project Team 7/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(SKILIKET) Need Camera Access to take photos.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "$(SKILIKET) Need access to a photo library to upload images.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -469,7 +481,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "TEC.SKILIKET-Project-Team-7";
+				PRODUCT_BUNDLE_IDENTIFIER = "TEC.SKILIKET-Project-Team-7-Ramir";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

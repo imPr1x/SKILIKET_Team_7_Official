@@ -13,11 +13,11 @@ class ReportUploadViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var buttonSelectProject: UIButton!
     @IBOutlet weak var buttonSelectTopic: UIButton!
     
-
+    
     // Vista transparente y tabla que se mostrarán para selección de elementos.
     let transparentView = UIView()
     let tableView = UITableView()
-        
+    
     // Botón seleccionado y los datos para el UITableView.
     var selectedButton = UIButton()
     var dataSource = [String]()
@@ -37,7 +37,7 @@ class ReportUploadViewController: UIViewController, UITableViewDelegate, UITable
         commentTextView.layer.cornerRadius = 5
         commentTextView.text = "Enter your comment here..."
         commentTextView.textColor = UIColor.lightGray
-
+        
         
         // Tap Gesture para esconder el teclado
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -46,10 +46,11 @@ class ReportUploadViewController: UIViewController, UITableViewDelegate, UITable
         
         setupCircularButton()
     }
+    
     func setupCircularButton() {
         // Asegura que el botón tenga dimensiones iguales para que sea un círculo perfecto
         uploadButton.heightAnchor.constraint(equalTo: uploadButton.widthAnchor).isActive = true
-
+        
         // Configura el radio de las esquinas para hacer el botón circular
         uploadButton.layer.cornerRadius = uploadButton.frame.height / 2
         uploadButton.clipsToBounds = true
@@ -62,28 +63,28 @@ class ReportUploadViewController: UIViewController, UITableViewDelegate, UITable
     
     @IBAction func uploadImageTapped(_ sender: UIButton) {
         let imagePickerController = UIImagePickerController()
-            imagePickerController.delegate = self
-            imagePickerController.mediaTypes = ["public.image"]
-            imagePickerController.allowsEditing = true // Si quieres permitir edición
-
-            let alertController = UIAlertController(title: "Select Image Source", message: nil, preferredStyle: .actionSheet)
-            
-            if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                alertController.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
-                    imagePickerController.sourceType = .camera
-                    self.present(imagePickerController, animated: true)
-                }))
-            }
-
-            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-                alertController.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { _ in
-                    imagePickerController.sourceType = .photoLibrary
-                    self.present(imagePickerController, animated: true)
-                }))
-            }
-
-            alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-            present(alertController, animated: true)
+        imagePickerController.delegate = self
+        imagePickerController.mediaTypes = ["public.image"]
+        imagePickerController.allowsEditing = true // Si quieres permitir edición
+        
+        let alertController = UIAlertController(title: "Select Image Source", message: nil, preferredStyle: .actionSheet)
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            alertController.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+                imagePickerController.sourceType = .camera
+                self.present(imagePickerController, animated: true)
+            }))
+        }
+        
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            alertController.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { _ in
+                imagePickerController.sourceType = .photoLibrary
+                self.present(imagePickerController, animated: true)
+            }))
+        }
+        
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(alertController, animated: true)
     }
     
     // MARK: - UIImagePickerControllerDelegate Methods
@@ -99,7 +100,7 @@ class ReportUploadViewController: UIViewController, UITableViewDelegate, UITable
         }
         dismiss(animated: true)
     }
-
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true)
     }
@@ -204,10 +205,30 @@ class ReportUploadViewController: UIViewController, UITableViewDelegate, UITable
             }
         }
     }
-
+    
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
         }
     }
+    
+    //Upload Report
+    
+    @IBAction func submitReportTapped(_ sender: UIButton) {
+        guard let project = buttonSelectProject.titleLabel?.text, project != "Select project",
+              let topic = buttonSelectTopic.titleLabel?.text, topic != "Select topic",
+              let comment = commentTextView.text, !comment.isEmpty && comment != "Enter your comment here..." else {
+            showAlertSubmit(withTitle: "Error", message: "Please fill in all fields and upload an image.")
+            return
+        }
+        showAlertSubmit(withTitle: "Success", message: "Your report has been successfully uploaded.")
+    }
+    
+    func showAlertSubmit(withTitle title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alertController.addAction(okAction)
+        present(alertController, animated: true)
+    }
+    
 }

@@ -72,7 +72,7 @@ class loginViewController: UIViewController {
                 // Guarda el usuario autenticado en UserDefaults para la persistencia
                 saveUserToUserDefaults(user: authenticatedUser)
                 
-                // Asegúrate de realizar la presentación manual en el hilo principal
+
                 if self.presentedViewController == nil {
                     DispatchQueue.main.async {
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
