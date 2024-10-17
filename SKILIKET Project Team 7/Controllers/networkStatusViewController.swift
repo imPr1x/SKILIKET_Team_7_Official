@@ -257,8 +257,7 @@ class networkStatusViewController: UIViewController, UITableViewDelegate, UITabl
             }
         }
 
-        // Actualización de la UI con los datos del device seleccionado
-    // Actualización de la UI con los datos del device seleccionado
+
     // Actualización de la UI con los datos del device seleccionado
     func updateDeviceUI(with selectedDevice: Host) {
         DispatchQueue.main.async {

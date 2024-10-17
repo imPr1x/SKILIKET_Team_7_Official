@@ -35,13 +35,25 @@ class NetworkDeviceResponse: Codable {
     let reachabilityStatus: String
     let type: String
     let softwareVersion: String
+    let id: String
 
-    init(hostname: String, managementIpAddress: String, reachabilityStatus: String, type: String, softwareVersion: String) {
+    // Especificamos las claves correctas para mapear desde el JSON
+    enum CodingKeys: String, CodingKey {
+        case hostname
+        case managementIpAddress = "managementIpAddress" // Mapeamos la clave JSON correctamente
+        case reachabilityStatus
+        case type
+        case softwareVersion
+        case id
+    }
+
+    init(hostname: String, managementIpAddress: String, reachabilityStatus: String, type: String, softwareVersion: String, id: String) {
         self.hostname = hostname
         self.managementIpAddress = managementIpAddress
         self.reachabilityStatus = reachabilityStatus
         self.type = type
         self.softwareVersion = softwareVersion
+        self.id = id
     }
 }
 
@@ -159,8 +171,6 @@ extension NetworkState {
             throw error
         }
     }
-    
-    
 }
 
 // MARK: - HostsResponse
@@ -202,12 +212,15 @@ class Host: Codable {
     let pingStatus: String
     let lastUpdated: String
     let connectedNetworkDeviceName: String
-
-    init(hostName: String, hostIp: String, pingStatus: String, connectedNetworkDeviceName: String, lastUpdated: String) {
+    let id: String // Nuevo campo para el ID
+  
+    init(hostName: String, hostIp: String, pingStatus: String, connectedNetworkDeviceName: String, lastUpdated: String, id: String ) {
         self.hostName = hostName
         self.hostIp = hostIp
         self.pingStatus = pingStatus
         self.connectedNetworkDeviceName = connectedNetworkDeviceName
         self.lastUpdated = lastUpdated
+        self.id = id // Asignamos el nuevo campo
     }
 }
+

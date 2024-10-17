@@ -12,100 +12,121 @@ class LocalNewsViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var userIcon: UIImageView!
     
-        // Array de respuestas que contendrá los datos obtenidos desde el JSON remoto
-        var projects = News()
+    // Array de respuestas que contendrá los datos obtenidos desde el JSON remoto
+    var projects = News()
 
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            // Asegura que la imagen se ajuste al marco de la UIImageView
-            userIcon.contentMode = .scaleAspectFill
-            
-            // Hace que la imagen sea redonda
-            userIcon.layer.cornerRadius = userIcon.frame.width / 2
-            userIcon.clipsToBounds = true
-            
-    
-            // Asignar delegado y fuente de datos
-            tableView.delegate = self
-            tableView.dataSource = self
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Asegura que la imagen se ajuste al marco de la UIImageView
+        userIcon.contentMode = .scaleAspectFill
+        
+        // Hace que la imagen sea redonda
+        userIcon.layer.cornerRadius = userIcon.frame.width / 2
+        userIcon.clipsToBounds = true
+        
+        // Cargar la imagen de perfil del usuario autenticado
+        loadUserProfileImage()
 
-            tableView.rowHeight = UITableView.automaticDimension
-            tableView.estimatedRowHeight = 300 // Ajusta este valor estimado si es necesario
+        // Asignar delegado y fuente de datos
+        tableView.delegate = self
+        tableView.dataSource = self
 
-            // Cargar los datos desde la URL
-            Task {
-                await fetchNewsData()
-            }
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 300 // Ajusta este valor estimado si es necesario
+
+        // Cargar los datos desde la URL
+        Task {
+            await fetchNewsData()
         }
+    }
 
-        // MARK: - Función para cargar los datos de la URL
-        func fetchNewsData() async {
+    // MARK: - Función para cargar la imagen del perfil del usuario autenticado
+    func loadUserProfileImage() {
+        if let userData = UserDefaults.standard.data(forKey: "authenticatedUser") {
+            let decoder = JSONDecoder()
             do {
-                let news = try await Feed.fetchNews()
-                self.projects = news
-                DispatchQueue.main.async {
-                    self.tableView.reloadData() // Recargar la tabla con los datos obtenidos
+                let user = try decoder.decode(User.self, from: userData)
+                
+                // Verificar si el usuario tiene una URL de imagen de perfil
+                if let profileImageURL = URL(string: user.profileImageURL) {
+                    loadImage(from: profileImageURL, into: userIcon)
                 }
             } catch {
-                print("Error al obtener los datos: \(error.localizedDescription)")
+                print("Error al decodificar el usuario: \(error)")
             }
+        } else {
+            print("No hay usuario autenticado guardado en UserDefaults.")
         }
+    }
 
-        // MARK: - Métodos de UITableViewDataSource y UITableViewDelegate
-
-        func numberOfSections(in tableView: UITableView) -> Int {
-            return 1
-        }
-
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return projects.count
-        }
-
-        // Configuración de cada celda
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectCell", for: indexPath) as! ProjectTableViewCell
-            
-            // Obtén el proyecto actual (en tu caso, se llaman "Response")
-            let project = projects[indexPath.row]
-            
-            // Configura los textos
-            cell.projectTitle.text = project.title
-            cell.projectDescription.text = project.description
-            cell.projectDate.text = project.date
-            cell.projectUser.text = project.userName
-            
-            // Cargar la imagen del proyecto desde una URL
-            if let projectImageURL = URL(string: project.imageName) {
-                loadImage(from: projectImageURL, into: cell.projectImage)
+    // MARK: - Función para cargar los datos de la URL
+    func fetchNewsData() async {
+        do {
+            let news = try await Feed.fetchNews()
+            self.projects = news
+            DispatchQueue.main.async {
+                self.tableView.reloadData() // Recargar la tabla con los datos obtenidos
             }
+        } catch {
+            print("Error al obtener los datos: \(error.localizedDescription)")
+        }
+    }
 
-            // Cargar la imagen del usuario desde una URL
-            if let userImageURL = URL(string: project.userImageName) {
-                loadImage(from: userImageURL, into: cell.userProjectImage)
+    // MARK: - Métodos de UITableViewDataSource y UITableViewDelegate
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return projects.count
+    }
+
+    // Configuración de cada celda
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectCell", for: indexPath) as! ProjectTableViewCell
+        
+        // Obtén el proyecto actual (en tu caso, se llaman "Response")
+        let project = projects[indexPath.row]
+        
+        // Configura los textos
+        cell.projectTitle.text = project.title
+        cell.projectDescription.text = project.description
+        cell.projectDate.text = project.date
+        cell.projectUser.text = project.userName
+        
+        // Cargar la imagen del proyecto desde una URL
+        if let projectImageURL = URL(string: project.imageName) {
+            loadImage(from: projectImageURL, into: cell.projectImage)
+        }
+
+        // Cargar la imagen del usuario desde una URL
+        if let userImageURL = URL(string: project.userImageName) {
+            loadImage(from: userImageURL, into: cell.userProjectImage)
+        }
+        
+        return cell
+    }
+
+    // Función para descargar imágenes desde una URL
+    func loadImage(from url: URL, into imageView: UIImageView) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                print("Error al descargar la imagen: \(error)")
+                return
             }
-            
-            return cell
-        }
+            guard let data = data, let image = UIImage(data: data) else {
+                print("Error al convertir los datos en imagen")
+                return
+            }
+            // Actualizar la imagen en el hilo principal
+            DispatchQueue.main.async {
+                imageView.image = image
+            }
+        }.resume()
+    }
 
-        // Función para descargar imágenes desde una URL
-        func loadImage(from url: URL, into imageView: UIImageView) {
-            URLSession.shared.dataTask(with: url) { data, response, error in
-                if let error = error {
-                    print("Error al descargar la imagen: \(error)")
-                    return
-                }
-                guard let data = data, let image = UIImage(data: data) else {
-                    print("Error al convertir los datos en imagen")
-                    return
-                }
-                // Actualizar la imagen en el hilo principal
-                DispatchQueue.main.async {
-                    imageView.image = image
-                }
-            }.resume()
-        }
-
-        // Preparación para el segue
+    // Preparación para el segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showNewsDetail" {
             // Este segue es para mostrar los detalles de una noticia específica
@@ -122,16 +143,14 @@ class LocalNewsViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
 
-    
-        //Ocultar la navbar en la pantalla principal de news
-        override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(animated)
-            navigationController?.setNavigationBarHidden(true, animated: animated)
-        }
-
-        override func viewWillDisappear(_ animated: Bool) {
-            super.viewWillDisappear(animated)
-            navigationController?.setNavigationBarHidden(false, animated: animated)
-        }
-    
+    //Ocultar la navbar en la pantalla principal de news
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+}

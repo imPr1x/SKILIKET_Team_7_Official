@@ -7,19 +7,16 @@
 
 import UIKit
 
-class yourProjectsViewController: UIViewController {
+class yourProjectsAdminViewController: UIViewController {
     
     
     var yourProjectSelected: yourproject?
+    
     var timer: Timer?
-    var maxValue: Double = 0.0 // Variable para almacenar el valor máximo registrado
-    var minValue: Double = Double.greatestFiniteMagnitude // Variable para almacenar el valor mínimo registrado
+    var maxValue: Double = -Double.greatestFiniteMagnitude
+    var minValue: Double = Double.greatestFiniteMagnitude
     
-    
-    
-
     @IBOutlet weak var titleproject: UILabel!
-    
     @IBOutlet weak var locationproject: UILabel!
     @IBOutlet weak var nameproject: UILabel!
     @IBOutlet weak var descriptionproject: UILabel!
@@ -27,10 +24,12 @@ class yourProjectsViewController: UIViewController {
     @IBOutlet weak var participantsproject: UILabel!
     @IBOutlet weak var imageuserproject: UIImageView!
     @IBOutlet weak var imageproject: UIImageView!
-    
+        
     @IBOutlet weak var variables: UILabel!
-    
+        
+        
     @IBOutlet weak var chartView: BarChartView!
+    
     @IBOutlet weak var maxLabel: UILabel! // Para mostrar el valor máximo registrado
     @IBOutlet weak var minLabel: UILabel! // Para mostrar el valor mínimo registrado
     
@@ -249,3 +248,4 @@ class yourProjectsViewController: UIViewController {
     }
 
 }
+

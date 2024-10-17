@@ -23,6 +23,8 @@ class GlobalNewsViewController: UIViewController, UITableViewDelegate, UITableVi
         userIcon.layer.cornerRadius = userIcon.frame.width / 2
         userIcon.clipsToBounds = true
         
+        // Cargar la imagen de perfil del usuario autenticado
+        loadUserProfileImage()
 
         // Asignar delegado y fuente de datos
         tableView.delegate = self
@@ -34,6 +36,25 @@ class GlobalNewsViewController: UIViewController, UITableViewDelegate, UITableVi
         // Cargar los datos desde la URL
         Task {
             await fetchNewsData()
+        }
+    }
+
+    // MARK: - Función para cargar la imagen del perfil del usuario autenticado
+    func loadUserProfileImage() {
+        if let userData = UserDefaults.standard.data(forKey: "authenticatedUser") {
+            let decoder = JSONDecoder()
+            do {
+                let user = try decoder.decode(User.self, from: userData)
+                
+                // Verificar si el usuario tiene una URL de imagen de perfil
+                if let profileImageURL = URL(string: user.profileImageURL) {
+                    loadImage(from: profileImageURL, into: userIcon)
+                }
+            } catch {
+                print("Error al decodificar el usuario: \(error)")
+            }
+        } else {
+            print("No hay usuario autenticado guardado en UserDefaults.")
         }
     }
 
@@ -104,7 +125,6 @@ class GlobalNewsViewController: UIViewController, UITableViewDelegate, UITableVi
         }.resume()
     }
 
-
     // Preparación para el segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showNewsDetail" {
@@ -130,8 +150,6 @@ class GlobalNewsViewController: UIViewController, UITableViewDelegate, UITableVi
             }
         }
     }
-
-
 
     //Ocultar la navbar en la pantalla principal de news
     override func viewWillAppear(_ animated: Bool) {

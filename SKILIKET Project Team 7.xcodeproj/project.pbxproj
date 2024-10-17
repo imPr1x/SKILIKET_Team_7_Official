@@ -28,6 +28,8 @@
 		CA10E2252CA8F42C0029568B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CA10E2242CA8F42C0029568B /* Base */; };
 		CA10E2272CA8F42E0029568B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA10E2262CA8F42E0029568B /* Assets.xcassets */; };
 		CA10E22A2CA8F42E0029568B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CA10E2292CA8F42E0029568B /* Base */; };
+		CA29B7DC2CC0E5960004FFE4 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA29B7DB2CC0E5960004FFE4 /* CustomNavigationController.swift */; };
+		CA29B7DE2CC0E8870004FFE4 /* yourProjectsAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA29B7DD2CC0E8870004FFE4 /* yourProjectsAdminViewController.swift */; };
 		CA34720F2CB2965D00E1F430 /* WorldNewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA34720E2CB2965D00E1F430 /* WorldNewsTableViewController.swift */; };
 		CA3472132CB2995900E1F430 /* worldFeedJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3472122CB2995900E1F430 /* worldFeedJSON.swift */; };
 		CA3472152CB2AE9E00E1F430 /* ProjectWorldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3472142CB2AE9E00E1F430 /* ProjectWorldViewController.swift */; };
@@ -35,6 +37,7 @@
 		CA3472192CB35B9100E1F430 /* yourProjectJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3472182CB35B9100E1F430 /* yourProjectJSON.swift */; };
 		CA34721B2CB35E3500E1F430 /* yourProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA34721A2CB35E3500E1F430 /* yourProjectsViewController.swift */; };
 		CA34721F2CB3669B00E1F430 /* suggestedProjectJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA34721E2CB3669B00E1F430 /* suggestedProjectJSON.swift */; };
+		CA5D847B2CC1039200E4D430 /* networkStatusAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D847A2CC1039200E4D430 /* networkStatusAdminViewController.swift */; };
 		CA6677482CBCFE45009ABF36 /* networkAdminJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6677472CBCFE45009ABF36 /* networkAdminJSON.swift */; };
 		CA667CD52CC04E6E009ABF36 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA667C312CC04E6E009ABF36 /* Animator.swift */; };
 		CA667CD62CC04E6E009ABF36 /* ChartAnimationEasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA667C322CC04E6E009ABF36 /* ChartAnimationEasing.swift */; };
@@ -180,6 +183,8 @@
 		CA667D622CC04E6E009ABF36 /* TransformerHorizontalBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA667CCC2CC04E6E009ABF36 /* TransformerHorizontalBarChart.swift */; };
 		CA667D632CC04E6E009ABF36 /* ViewPortHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA667CCD2CC04E6E009ABF36 /* ViewPortHandler.swift */; };
 		CA667D642CC04E6E009ABF36 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = CA667CCF2CC04E6E009ABF36 /* PrivacyInfo.xcprivacy */; };
+		CA7D18C82CC1173D00259031 /* NetworkHealthTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7D18C72CC1173D00259031 /* NetworkHealthTableViewController.swift */; };
+		CA7D18CA2CC11AB900259031 /* NetworkHealthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7D18C92CC11AB900259031 /* NetworkHealthViewController.swift */; };
 		CA9E56242CB5ED39001C8AC2 /* LocalNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9E56232CB5ED39001C8AC2 /* LocalNewsViewController.swift */; };
 		CA9E56262CBA7A33001C8AC2 /* yourProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9E56252CBA7A33001C8AC2 /* yourProjectViewController.swift */; };
 		CA9E56282CBC8FA3001C8AC2 /* networkJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9E56272CBC8FA3001C8AC2 /* networkJSON.swift */; };
@@ -213,6 +218,8 @@
 		CA10E2262CA8F42E0029568B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA10E2292CA8F42E0029568B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA10E22B2CA8F42E0029568B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA29B7DB2CC0E5960004FFE4 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		CA29B7DD2CC0E8870004FFE4 /* yourProjectsAdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yourProjectsAdminViewController.swift; sourceTree = "<group>"; };
 		CA34720E2CB2965D00E1F430 /* WorldNewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldNewsTableViewController.swift; sourceTree = "<group>"; };
 		CA3472122CB2995900E1F430 /* worldFeedJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = worldFeedJSON.swift; sourceTree = "<group>"; };
 		CA3472142CB2AE9E00E1F430 /* ProjectWorldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectWorldViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +227,7 @@
 		CA3472182CB35B9100E1F430 /* yourProjectJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yourProjectJSON.swift; sourceTree = "<group>"; };
 		CA34721A2CB35E3500E1F430 /* yourProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yourProjectsViewController.swift; sourceTree = "<group>"; };
 		CA34721E2CB3669B00E1F430 /* suggestedProjectJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = suggestedProjectJSON.swift; sourceTree = "<group>"; };
+		CA5D847A2CC1039200E4D430 /* networkStatusAdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = networkStatusAdminViewController.swift; sourceTree = "<group>"; };
 		CA6677472CBCFE45009ABF36 /* networkAdminJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = networkAdminJSON.swift; sourceTree = "<group>"; };
 		CA667C312CC04E6E009ABF36 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		CA667C322CC04E6E009ABF36 /* ChartAnimationEasing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartAnimationEasing.swift; sourceTree = "<group>"; };
@@ -367,6 +375,8 @@
 		CA667CCF2CC04E6E009ABF36 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		CA667CD12CC04E6E009ABF36 /* DGCharts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGCharts.h; sourceTree = "<group>"; };
 		CA667CD22CC04E6E009ABF36 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA7D18C72CC1173D00259031 /* NetworkHealthTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHealthTableViewController.swift; sourceTree = "<group>"; };
+		CA7D18C92CC11AB900259031 /* NetworkHealthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHealthViewController.swift; sourceTree = "<group>"; };
 		CA9E56232CB5ED39001C8AC2 /* LocalNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNewsViewController.swift; sourceTree = "<group>"; };
 		CA9E56252CBA7A33001C8AC2 /* yourProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yourProjectViewController.swift; sourceTree = "<group>"; };
 		CA9E56272CBC8FA3001C8AC2 /* networkJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = networkJSON.swift; sourceTree = "<group>"; };
@@ -413,6 +423,11 @@
 				CA9E56252CBA7A33001C8AC2 /* yourProjectViewController.swift */,
 				3411C2912CBED6ED00B30B95 /* projectsAdminViewController.swift */,
 				3411C2932CBED70100B30B95 /* projectsAddViewController.swift */,
+				CA29B7DB2CC0E5960004FFE4 /* CustomNavigationController.swift */,
+				CA29B7DD2CC0E8870004FFE4 /* yourProjectsAdminViewController.swift */,
+				CA5D847A2CC1039200E4D430 /* networkStatusAdminViewController.swift */,
+				CA7D18C72CC1173D00259031 /* NetworkHealthTableViewController.swift */,
+				CA7D18C92CC11AB900259031 /* NetworkHealthViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -867,12 +882,14 @@
 				CA667CF42CC04E6E009ABF36 /* BubbleChartDataEntry.swift in Sources */,
 				CA667D032CC04E6E009ABF36 /* PieChartDataEntry.swift in Sources */,
 				CA667D5F2CC04E6E009ABF36 /* Platform+Touch Handling.swift in Sources */,
+				CA29B7DC2CC0E5960004FFE4 /* CustomNavigationController.swift in Sources */,
 				CA667D452CC04E6E009ABF36 /* DataRenderer.swift in Sources */,
 				CA667CFA2CC04E6E009ABF36 /* ChartDataEntry.swift in Sources */,
 				CA667D342CC04E6E009ABF36 /* MoveViewJob.swift in Sources */,
 				CA667CDE2CC04E6E009ABF36 /* LineChartView.swift in Sources */,
 				349DE7F92CB7768100297558 /* ReportUploadViewController.swift in Sources */,
 				CA667D222CC04E6E009ABF36 /* Highlight.swift in Sources */,
+				CA7D18CA2CC11AB900259031 /* NetworkHealthViewController.swift in Sources */,
 				CA667D2A2CC04E6E009ABF36 /* BarLineScatterCandleBubbleChartDataProvider.swift in Sources */,
 				CA667CDB2CC04E6E009ABF36 /* ChartViewBase.swift in Sources */,
 				348893D72CAF52A60068E5BF /* loginViewController.swift in Sources */,
@@ -880,6 +897,7 @@
 				CA667D252CC04E6E009ABF36 /* PieHighlighter.swift in Sources */,
 				CA667CF72CC04E6E009ABF36 /* CandleChartDataEntry.swift in Sources */,
 				348893E92CAF6F630068E5BF /* ProjectViewController.swift in Sources */,
+				CA5D847B2CC1039200E4D430 /* networkStatusAdminViewController.swift in Sources */,
 				CA667D1D2CC04E6E009ABF36 /* IndexAxisValueFormatter.swift in Sources */,
 				CA667D1A2CC04E6E009ABF36 /* DefaultFillFormatter.swift in Sources */,
 				CA667D052CC04E6E009ABF36 /* RadarChartData.swift in Sources */,
@@ -908,6 +926,7 @@
 				CA667CF62CC04E6E009ABF36 /* CandleChartData.swift in Sources */,
 				CA667D322CC04E6E009ABF36 /* AnimatedViewPortJob.swift in Sources */,
 				CA667D2F2CC04E6E009ABF36 /* LineChartDataProvider.swift in Sources */,
+				CA29B7DE2CC0E8870004FFE4 /* yourProjectsAdminViewController.swift in Sources */,
 				CA667CFD2CC04E6E009ABF36 /* CombinedChartData.swift in Sources */,
 				CA667D4F2CC04E6E009ABF36 /* XAxisRenderer.swift in Sources */,
 				CA667CE12CC04E6E009ABF36 /* RadarChartView.swift in Sources */,
@@ -987,6 +1006,7 @@
 				CA667D0A2CC04E6E009ABF36 /* ChartBaseDataSet.swift in Sources */,
 				CAB4ED8A2CAA404F0035E4F2 /* FeedJSON.swift in Sources */,
 				CA9E56282CBC8FA3001C8AC2 /* networkJSON.swift in Sources */,
+				CA7D18C82CC1173D00259031 /* NetworkHealthTableViewController.swift in Sources */,
 				CA667D1C2CC04E6E009ABF36 /* FillFormatter.swift in Sources */,
 				CA34721B2CB35E3500E1F430 /* yourProjectsViewController.swift in Sources */,
 				CA667CFB2CC04E6E009ABF36 /* ChartDataEntryBase.swift in Sources */,
