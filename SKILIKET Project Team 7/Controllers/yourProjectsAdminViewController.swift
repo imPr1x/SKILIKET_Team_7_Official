@@ -10,6 +10,7 @@ import UIKit
 class yourProjectsAdminViewController: UIViewController {
     
     
+    @IBOutlet weak var deleteButton: UIButton!
     var yourProjectSelected: yourproject?
     
     var timer: Timer?
@@ -39,7 +40,7 @@ class yourProjectsAdminViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupCircularButton()
         // Inicialización del temporizador
         timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(refreshSensorData), userInfo: nil, repeats: true)
         
@@ -245,6 +246,44 @@ class yourProjectsAdminViewController: UIViewController {
         let water: Int?
         let smoke: Int?
         let humidity: Int? // Agregamos humedad, ya que puede estar en algunos casos
+    }
+    
+    @IBAction func deleteButtonTapped(_ sender: UIButton) {
+        showDeletionConfirmationAlert()
+    }
+    
+    func showDeletionConfirmationAlert() {
+        let alertController = UIAlertController(title: "Are you sure?", message: "Are you sure you want to delete this project?", preferredStyle: .alert)
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
+            self?.deleteProject()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alertController.addAction(deleteAction)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true)
+    }
+    
+    func deleteProject() {
+        showAlertProjectDeletedSuccessfully()
+    }
+    
+    func showAlertProjectDeletedSuccessfully() {
+        let alertController = UIAlertController(title: "Deleted Successfully", message: "The project has been deleted successfully.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alertController.addAction(okAction)
+        present(alertController, animated: true)
+    }
+    
+    func setupCircularButton() {
+        // Asegura que el botón tenga dimensiones iguales para que sea un círculo perfecto
+        deleteButton.heightAnchor.constraint(equalTo: deleteButton.widthAnchor).isActive = true
+
+        // Configura el radio de las esquinas para hacer el botón circular
+        deleteButton.layer.cornerRadius = deleteButton.frame.height / 2
+        deleteButton.clipsToBounds = true
     }
 
 }

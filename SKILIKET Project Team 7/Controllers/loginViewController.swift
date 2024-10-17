@@ -98,6 +98,25 @@ class loginViewController: UIViewController {
         setupHideKeyboardOnTap()
         setupKeyboardNotifications()
         setupCircularButton()
+        setupPasswordField()
+    }
+    
+    private func setupPasswordField() {
+        passwordTextField.isSecureTextEntry = true
+
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(named: "eye"), for: .normal)  // Reemplaza "eyeIcon" con el nombre de tu imagen que representa un ojo cerrado
+        button.setImage(UIImage(named: "eye (1)"), for: .selected)  // Reemplaza "eyeSlashIcon" con el nombre de tu imagen que representa un ojo abierto
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: 0)
+        button.frame = CGRect(x: CGFloat(passwordTextField.frame.size.width - 25), y: CGFloat(5), width: CGFloat(20), height: CGFloat(20))
+        button.addTarget(self, action: #selector(togglePasswordView), for: .touchUpInside)
+        passwordTextField.rightView = button
+        passwordTextField.rightViewMode = .always
+    }
+
+    @objc func togglePasswordView(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        passwordTextField.isSecureTextEntry = !sender.isSelected
     }
     
     func setupCircularButton() {

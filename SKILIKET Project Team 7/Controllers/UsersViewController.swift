@@ -34,6 +34,27 @@ class UsersViewController: UIViewController {
         usernameLabel.isHidden = true
         
         setupHideKeyboardOnTap()
+        setupCircularButton()
+        setupCircularUserImageView()
+    }
+    
+    func setupCircularUserImageView() {
+        // Asegúrate de que la vista de imagen tenga dimensiones antes de ajustar el cornerRadius
+        profileImageView.layoutIfNeeded()
+        
+        // Ajustar el cornerRadius para formar un círculo completo
+        profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
+        profileImageView.clipsToBounds = true
+    }
+
+    
+    func setupCircularButton() {
+        // Asegura que el botón tenga dimensiones iguales para que sea un círculo perfecto
+        saveButton.heightAnchor.constraint(equalTo: saveButton.widthAnchor).isActive = true
+
+        // Configura el radio de las esquinas para hacer el botón circular
+        saveButton.layer.cornerRadius = saveButton.frame.height / 2
+        saveButton.clipsToBounds = true
     }
     
     func loadAuthenticatedUser() {

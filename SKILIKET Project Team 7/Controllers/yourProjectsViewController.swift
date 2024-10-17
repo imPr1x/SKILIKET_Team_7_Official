@@ -18,8 +18,8 @@ class yourProjectsViewController: UIViewController {
     
     
 
+    @IBOutlet weak var joinButton: UIButton!
     @IBOutlet weak var titleproject: UILabel!
-    
     @IBOutlet weak var locationproject: UILabel!
     @IBOutlet weak var nameproject: UILabel!
     @IBOutlet weak var descriptionproject: UILabel!
@@ -71,7 +71,8 @@ class yourProjectsViewController: UIViewController {
         if let location = yourProjectSelected?.location, let topics = yourProjectSelected?.topics {
             fetchSensorData(forLocation: location, topics: topics)
         }
-        
+        //Boton circular
+        setupCircularButton()
         // Inicializamos el UILabel del valor máximo y mínimo
         maxLabel.text = "Máximo registrado: \(maxValue)"
         minLabel.text = "Mínimo registrado: \(minValue)"
@@ -246,6 +247,26 @@ class yourProjectsViewController: UIViewController {
         let water: Int?
         let smoke: Int?
         let humidity: Int? // Agregamos humedad, ya que puede estar en algunos casos
+    }
+    
+    @IBAction func joinButtonTapped(_ sender: UIButton) {
+        showAlertJoinedSuccessfully()
+    }
+    
+    func showAlertJoinedSuccessfully() {
+        let alertController = UIAlertController(title: "Joined Successfully", message: "You have successfully joined the project.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alertController.addAction(okAction)
+        present(alertController, animated: true)
+    }
+    
+    func setupCircularButton() {
+        // Asegura que el botón tenga dimensiones iguales para que sea un círculo perfecto
+        joinButton.heightAnchor.constraint(equalTo: joinButton.widthAnchor).isActive = true
+
+        // Configura el radio de las esquinas para hacer el botón circular
+        joinButton.layer.cornerRadius = joinButton.frame.height / 2
+        joinButton.clipsToBounds = true
     }
 
 }

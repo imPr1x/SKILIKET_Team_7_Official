@@ -34,7 +34,7 @@ class PageDataViewController: UIViewController {
             print("No se proporcionó una URL válida para la imagen")
         }
         setupCircularButton()
-        setupOvalImageView()
+        setupRoundedRectangleImageView()
     }
         
         override func viewDidAppear(_ animated: Bool) {
@@ -89,14 +89,15 @@ class PageDataViewController: UIViewController {
         selectButton.clipsToBounds = true
     }
     
-    func setupOvalImageView() {
+    func setupRoundedRectangleImageView() {
         // Asegúrate de que la vista de imagen tenga dimensiones antes de ajustar el cornerRadius
         imageView.layoutIfNeeded()
         
-        // Ajustar el cornerRadius para formar un óvalo
-        let radius = min(imageView.frame.width, imageView.frame.height) / 2
-        imageView.layer.cornerRadius = radius
+        // Ajustar el cornerRadius para obtener bordes redondeados
+        // El valor del cornerRadius puede ajustarse para obtener el efecto deseado
+        imageView.layer.cornerRadius = 20  // Este valor puede variar según el tamaño de la vista y la estética deseada
         imageView.clipsToBounds = true
     }
+
 
 }

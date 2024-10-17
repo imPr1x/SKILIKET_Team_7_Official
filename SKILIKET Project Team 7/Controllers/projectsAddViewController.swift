@@ -12,6 +12,8 @@ class projectsAddViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     
+
+    @IBOutlet weak var addButtonProject: UIButton!
     //Image
     var isImageSelected = false
     @IBOutlet weak var imageNameLabel: UILabel!
@@ -80,6 +82,7 @@ class projectsAddViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCircularButton()
         tableViewParameters.delegate = self
         tableViewParameters.dataSource = self
         tableView.delegate = self
@@ -93,6 +96,15 @@ class projectsAddViewController: UIViewController, UITableViewDelegate, UITableV
         
         setupHideKeyboardOnTap()
 
+    }
+    
+    func setupCircularButton() {
+        // Asegura que el botón tenga dimensiones iguales para que sea un círculo perfecto
+        addButtonProject.heightAnchor.constraint(equalTo: addButtonProject.widthAnchor).isActive = true
+
+        // Configura el radio de las esquinas para hacer el botón circular
+        addButtonProject.layer.cornerRadius = addButtonProject.frame.height / 2
+        addButtonProject.clipsToBounds = true
     }
     
     func setupHideKeyboardOnTap() {

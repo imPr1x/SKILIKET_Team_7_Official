@@ -53,7 +53,7 @@ enum yourprojectError: Error, LocalizedError {
 
 extension YourProject {
     static func fetchyourProjects() async throws -> yourprojects {
-        var urlComponents = URLComponents(string: "http://martinmolina.com.mx/martinmolina.com.mx/reto_skiliket/Equipo7/yourprojectsJSON.json")!
+        var urlComponents = URLComponents(string: "http://martinmolina.com.mx/martinmolina.com.mx/reto_skiliket/Equipo7/yourprojects3JSON.json")!
         
         let (data, response) = try await URLSession.shared.data(from: urlComponents.url!)
         let jsonDecoder = JSONDecoder()

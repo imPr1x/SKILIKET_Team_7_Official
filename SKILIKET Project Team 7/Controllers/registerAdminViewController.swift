@@ -116,8 +116,31 @@ class registerAdminViewController: UIViewController, UIDocumentPickerDelegate {
         setupCircularButton()
         setupHideKeyboardOnTap()
         setupKeyboardNotifications()
-        // Do any additional setup after loading the view.
+        setupPasswordField(confirmPasswordTextField)
+        setupPasswordField(passwordTextField) 
     }
+    
+    
+    private func setupPasswordField(_ textField: UITextField) {
+        textField.isSecureTextEntry = true
+
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(named: "eye black"), for: .normal)  // Icono de ojo cerrado
+        button.setImage(UIImage(named: "eye closeb"), for: .selected)  // Icono de ojo abierto
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: 0)
+        button.frame = CGRect(x: CGFloat(textField.frame.size.width - 25), y: CGFloat(5), width: CGFloat(20), height: CGFloat(20))
+        button.addTarget(self, action: #selector(togglePasswordView(_:)), for: .touchUpInside)
+        textField.rightView = button
+        textField.rightViewMode = .always
+    }
+
+    @objc func togglePasswordView(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        if let textField = sender.superview as? UITextField {
+            textField.isSecureTextEntry = !sender.isSelected
+        }
+    }
+
     
     func setupCircularButton() {
         // Asegura que el botón tenga dimensiones iguales para que sea un círculo perfecto
