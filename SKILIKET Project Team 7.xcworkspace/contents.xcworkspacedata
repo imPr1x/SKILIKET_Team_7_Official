@@ -4,7 +4,4 @@
    <FileRef
       location = "group:SKILIKET Project Team 7.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:Pods/Pods.xcodeproj">
-   </FileRef>
 </Workspace>
