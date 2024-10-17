@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vtJ-1k-Ahj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5iy-Qj-Xzn">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="kSC-mu-OV5" customClass="ProjectViewController" customModule="SKILIKET_Project_Team_7" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KKC-UU-EOw">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="1190"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="1180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mkX-d9-Irp">
-                                <rect key="frame" x="0.0" y="78" width="393" height="1112"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="1180"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5HE-Dd-LOC" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="1200"/>
@@ -30,6 +30,13 @@
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xS4-d9-DrB">
                                                 <rect key="frame" x="84" y="296" width="286" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="min" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5EW-u2-KDD">
+                                                <rect key="frame" x="34" y="905" width="224" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -73,6 +80,25 @@
                                                     <constraint firstAttribute="height" constant="38" id="rnn-2r-hWm"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="variables" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kg6-VH-eTz">
+                                                <rect key="frame" x="20" y="456" width="349" height="84"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bzR-Q5-NVv" customClass="BarChartView" customModule="SKILIKET_Project_Team_7" customModuleProvider="target">
+                                                <rect key="frame" x="51" y="548" width="286" height="255"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="max" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUg-5d-y01">
+                                                <rect key="frame" x="34" y="864" width="218" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -133,14 +159,18 @@
                     </navigationItem>
                     <size key="freeformSize" width="393" height="1190"/>
                     <connections>
+                        <outlet property="chartView" destination="bzR-Q5-NVv" id="LiQ-b3-C8v"/>
                         <outlet property="dateproject" destination="vOv-GM-VQH" id="Inl-xX-sDb"/>
                         <outlet property="descriptionproject" destination="vqv-Io-aud" id="wyA-7m-l1F"/>
                         <outlet property="imageproject" destination="8bW-h0-dsw" id="nT5-wT-Ota"/>
                         <outlet property="imageuserproject" destination="M7n-xI-sLS" id="flE-wT-pR6"/>
                         <outlet property="locationproject" destination="OX2-pD-lbc" id="Kgp-FW-ykE"/>
+                        <outlet property="maxLabel" destination="LUg-5d-y01" id="yDG-b4-rAK"/>
+                        <outlet property="minLabel" destination="5EW-u2-KDD" id="H2D-ee-E7K"/>
                         <outlet property="nameproject" destination="xS4-d9-DrB" id="poP-Jw-at5"/>
                         <outlet property="participantsproject" destination="iYl-yy-4Rz" id="KU9-H5-6XE"/>
                         <outlet property="titleprojec" destination="wmW-1Z-NxN" id="QrP-Xd-aAY"/>
+                        <outlet property="variables" destination="kg6-VH-eTz" id="idE-b0-3iJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2it-xD-qbh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1237,6 +1267,32 @@
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="variables" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McH-lU-4rP">
+                                                <rect key="frame" x="21" y="476" width="349" height="91"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nPw-f5-Zpg" customClass="BarChartView" customModule="SKILIKET_Project_Team_7" customModuleProvider="target">
+                                                <rect key="frame" x="53" y="592" width="286" height="255"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="min" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twy-uw-pyf">
+                                                <rect key="frame" x="53" y="940" width="224" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="max" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHk-Lx-caC">
+                                                <rect key="frame" x="53" y="899" width="218" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -1291,19 +1347,23 @@
                     </navigationItem>
                     <size key="freeformSize" width="393" height="1200"/>
                     <connections>
+                        <outlet property="chartView" destination="nPw-f5-Zpg" id="OPp-Ul-Iaa"/>
                         <outlet property="dateproject" destination="REj-Kz-mBn" id="Rn7-Bm-oVW"/>
                         <outlet property="descriptionproject" destination="Hsb-dK-6CW" id="UFM-Rm-EnV"/>
                         <outlet property="imageproject" destination="6cM-xN-wNH" id="RWm-TG-OMu"/>
                         <outlet property="imageuserproject" destination="RcS-SA-OFG" id="mBj-fP-6Ml"/>
                         <outlet property="locationproject" destination="3fP-dp-DkY" id="5Ge-2F-Zwu"/>
+                        <outlet property="maxLabel" destination="hHk-Lx-caC" id="MZ3-SS-gK5"/>
+                        <outlet property="minLabel" destination="twy-uw-pyf" id="3GY-oq-Y8X"/>
                         <outlet property="nameproject" destination="4MV-28-LVB" id="ocG-TP-wdm"/>
                         <outlet property="participantsproject" destination="fQ4-WJ-UQK" id="avT-Ob-W1A"/>
                         <outlet property="titleproject" destination="763-JM-bgO" id="VBd-YB-J7M"/>
+                        <outlet property="variables" destination="McH-lU-4rP" id="IWc-9R-Vyq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X0M-uz-2Td" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4385.4961832061063" y="1948.5915492957747"/>
+            <point key="canvasLocation" x="4383.9694656488546" y="1948.5915492957747"/>
         </scene>
         <!--Projects-->
         <scene sceneID="uQB-ci-xVV">
@@ -1616,11 +1676,11 @@
             <objects>
                 <viewController id="WPH-u5-HG4" customClass="GlobalNewsViewController" customModule="SKILIKET_Project_Team_7" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XO1-i3-qUr">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="5YF-3z-qKc">
-                                <rect key="frame" x="0.0" y="115" width="393" height="737"/>
+                                <rect key="frame" x="0.0" y="115" width="393" height="727"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.1960784314" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1780,11 +1840,11 @@
             <objects>
                 <viewController id="aLP-zp-HZU" customClass="LocalNewsViewController" customModule="SKILIKET_Project_Team_7" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NZx-68-p2b">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="4OY-fy-mZA">
-                                <rect key="frame" x="0.0" y="115" width="393" height="737"/>
+                                <rect key="frame" x="0.0" y="115" width="393" height="727"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.1960784314" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1944,11 +2004,11 @@
             <objects>
                 <viewController id="PvC-Ic-ad4" customClass="ProjectWorldViewController" customModule="SKILIKET_Project_Team_7" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VFu-su-LiE">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="1190"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="1180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RpP-CS-bZl">
-                                <rect key="frame" x="0.0" y="78" width="393" height="1112"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="1180"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F7g-Ek-yw8" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="3" width="393" height="1200"/>
@@ -2001,6 +2061,32 @@
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="72" id="s6t-Bp-6yE"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="variables" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6T-Ev-GDD">
+                                                <rect key="frame" x="17" y="437" width="349" height="136"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qHA-9S-xu9" customClass="BarChartView" customModule="SKILIKET_Project_Team_7" customModuleProvider="target">
+                                                <rect key="frame" x="48" y="595" width="286" height="255"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="min" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5c5-DN-2wX">
+                                                <rect key="frame" x="48" y="979" width="224" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="max" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ybh-D1-oyr">
+                                                <rect key="frame" x="48" y="938" width="218" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -2065,14 +2151,18 @@
                     </navigationItem>
                     <size key="freeformSize" width="393" height="1190"/>
                     <connections>
+                        <outlet property="chartView" destination="qHA-9S-xu9" id="4bs-MA-989"/>
                         <outlet property="dateproject" destination="ynx-fD-Hq8" id="zKc-iu-78f"/>
                         <outlet property="descriptionproject" destination="SD3-Ri-PN8" id="neA-Qx-xp0"/>
                         <outlet property="imageproject" destination="BP6-fR-Xk4" id="04C-yf-9R7"/>
                         <outlet property="imageuserproject" destination="mfy-ka-3vK" id="zLS-2j-jia"/>
                         <outlet property="locationproject" destination="jct-Ad-ltT" id="fqP-DO-O3h"/>
+                        <outlet property="maxLabel" destination="Ybh-D1-oyr" id="J8H-XN-FQ4"/>
+                        <outlet property="minLabel" destination="5c5-DN-2wX" id="wHv-TN-kNi"/>
                         <outlet property="nameproject" destination="QxZ-H1-0my" id="zIr-cu-5NI"/>
                         <outlet property="participantsproject" destination="Qrn-HK-crj" id="z1j-Wg-n6R"/>
                         <outlet property="titleprojec" destination="4Z1-jP-izC" id="7G7-RF-v5D"/>
+                        <outlet property="variable" destination="u6T-Ev-GDD" id="tSQ-Wv-XVm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R7O-1w-DdI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2785,7 +2875,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xiG-KP-lo9"/>
+        <segue reference="wls-g7-6Wc"/>
         <segue reference="lyq-Wy-WA6"/>
         <segue reference="cDd-ul-Kk1"/>
         <segue reference="U2g-a4-O7k"/>

@@ -1,0 +1,6 @@
+framework module Pods_SKILIKET_Project_Team_7 {
+  umbrella header "Pods-SKILIKET Project Team 7-umbrella.h"
+
+  export *
+  module * { export * }
+}
